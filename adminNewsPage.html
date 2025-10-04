@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin News Page - Disaster Alert System</title>
+    <link rel="stylesheet" href="css/adminNewsPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script/adminNewsScript.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>AlertAdmin</h2>
+            </div>
+            <ul class="nav-links">
+                <li data-tab="alert-tab"><a href="adminAlertHistory.html"><i class="fas fa-bell"></i> SMS Alerts</a></li>
+                <li data-tab="social-tab" class="active"><a href="#"><i class="fas fa-newspaper"></i> Social Feed</a></li>
+                <li><a href="adminAlertHistory.html"><i class="fas fa-history"></i> Alert History</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Recipients</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Disaster Alert System</h1>
+                <div class="user-info">
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=3498db&color=fff" alt="Admin">
+                    <span>Admin User</span>
+                </div>
+            </div>
+
+            <!-- Social Feed Section -->
+            <div id="social-tab" class="social-feed-section">
+                <div class="create-post">
+                    <div class="post-input-area">
+                        <div class="avatar">A</div>
+                        
+                        <!-- Label triggers hidden input -->
+                        <label for="imageInput" class="post-input">
+                            What's on your mind?
+                        </label>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="post-options">
+                        <!-- Label for image upload -->
+                        <label for="imageInput" class="post-option">
+                            <svg fill="#45bd62" viewBox="0 0 24 24">
+                                <path d="M19 7v2.99s-1.99.01-2 0V7h-3s.01-1.99 0-2h3V2h2v3h3v2h-3zm-3 4V8h-3V5H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8h-3zM5 19l3-4 2 3 3-4 4 5H5z"/>
+                            </svg>
+                            Photo/Video
+                        </label>
+                    </div>
+                    
+                    <!-- Hidden file input -->
+                    <input type="file" id="imageInput" accept="image/*" multiple style="display: none;">
+                </div>
+
+                <div class="posts-feed" id="postsFeed">
+                    <!-- Posts will be dynamically added here -->
+                </div>
+            </div>
+        </div> <!-- Closing main-content -->
+    </div> <!-- Closing container -->
+</body>
+</html>

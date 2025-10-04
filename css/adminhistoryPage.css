@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 0;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    padding: 0 30px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+.logo h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 5px 0;
+    transition: background 0.3s ease;
+}
+
+.nav-links li:hover,
+.nav-links li.active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    transition: padding-left 0.3s ease;
+}
+
+.nav-links a:hover {
+    padding-left: 40px;
+}
+
+.nav-links i {
+    font-size: 18px;
+    width: 20px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 280px;
+    flex: 1;
+    padding: 30px;
+}
+
+/* Header */
+.header {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #667eea;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-info img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #667eea;
+}
+
+.user-info span {
+    font-weight: 600;
+    color: #1c1e21;
+}
+
+/* Alert History Section */
+.alert-history {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.alert-history h2 {
+    color: #1c1e21;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #667eea;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+thead tr th {
+    color: white;
+    font-weight: 600;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+thead tr th:first-child {
+    border-top-left-radius: 8px;
+}
+
+thead tr th:last-child {
+    border-top-right-radius: 8px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e4e6eb;
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #f7f8fa;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr td {
+    padding: 18px 20px;
+    color: #1c1e21;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+tbody tr td:nth-child(2) {
+    font-weight: 600;
+    color: #667eea;
+}
+
+tbody tr td:nth-child(3) {
+    max-width: 350px;
+    line-height: 1.5;
+    color: #65676b;
+}
+
+tbody tr td:nth-child(4) {
+    color: #65676b;
+}
+
+/* Status Badge */
+.status {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status.sent {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status.pending {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.status.failed {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 240px;
+    }
+
+    .main-content {
+        margin-left: 240px;
+    }
+
+    tbody tr td:nth-child(3) {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px;
+        padding: 20px 0;
+    }
+
+    .logo h2 {
+        font-size: 20px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .nav-links a {
+        padding: 15px 10px;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 12px;
+    }
+
+    .nav-links a span {
+        display: none;
+    }
+
+    .nav-links a:hover {
+        padding-left: 10px;
+    }
+
+    .main-content {
+        margin-left: 80px;
+        padding: 20px 15px;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .alert-history {
+        padding: 20px;
+        overflow-x: auto;
+    }
+
+    .alert-history h2 {
+        font-size: 20px;
+    }
+
+    table {
+        min-width: 800px;
+    }
+
+    thead tr th {
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+
+    tbody tr td {
+        padding: 14px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .main-content {
+        margin-left: 60px;
+        padding: 15px 10px;
+    }
+
+    .logo h2 {
+        font-size: 16px;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .user-info span {
+        font-size: 14px;
+    }
+
+    .alert-history {
+        padding: 15px;
+    }
+
+    .alert-history h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    thead tr th {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+
+    tbody tr td {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .status {
+        padding: 4px 12px;
+        font-size: 11px;
+    }
+}
+
+/* Scrollbar Styling for Table Container */
+.alert-history::-webkit-scrollbar {
+    height: 8px;
+}
+
+.alert-history::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.alert-history::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+.alert-history::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
