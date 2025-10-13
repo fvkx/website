@@ -1,48 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Information | Barangay Disaster Preparedness Portal</title>
+    <link rel="stylesheet" href="css/newHomePage.css">
     <link rel="stylesheet" href="css/DisasterHomePage.css">
-    <script src="script/script.js"></script>
-    <title>Document</title>
 </head>
+
 <body>
-  
-    <h2>Disaster & Preparedness</h2>
-    <p>Move the mouse over a button inside the tabbed menu:</p>
 
-    <div class="tab">
-        <button class="tablinks" onmouseover="openDisaster(event, 'Tsuname')">Tsuname</button>
-        <button class="tablinks" onmouseover="openDisaster(event, 'Typhoon')">Typhoon</button>
-        <button class="tablinks" onmouseover="openDisaster(event, 'Huricane')">Huricane</button>
+    <!-- NAVBAR -->
+    <header>
+        <div class="navbar">
+            <div class="logo">Barangay Disaster Preparedness Portal</div>
+            <ul>
+                <li><a href="HomePage.html">Home</a></li>
+                <li><a href="DisasterHomePage.html" class="active">Disasters</a></li>
+                <li><a href="HotlinePage.html">Hotlines</a></li>
+                <li><a href="newsUserPage.html">News</a></li>
+                <li><a href="adminLog-in.html">Admin</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- TITLE -->
+    <h1>Disaster Information</h1>
+
+    <!-- MAIN CONTENT -->
+    <div class="tab-container">
+        <div class="tab">
+            <button class="tablinks" onmouseover="openDisaster(event, 'Flood')">Flood</button>
+            <button class="tablinks" onmouseover="openDisaster(event, 'Hurricane')">Hurricane</button>
+            <button class="tablinks" onmouseover="openDisaster(event, 'Earthquake')">Earthquake</button>
+            <button class="tablinks" onmouseover="openDisaster(event, 'Tsunami')">Tsunami</button>
+            <button class="tablinks" onmouseover="openDisaster(event, 'Wildfire')">Wildfire</button>
+            <button class="tablinks" onmouseover="openDisaster(event, 'Tornado')">Tornado</button>
+        </div>
+
+        <div id="Flood" class="tabcontent">
+            <h3>Flood</h3>
+            <p></p>
+        </div>
+
+        <div id="Hurricane" class="tabcontent">
+            <h3>Hurricane</h3>
+            <p></p>
+        </div>
+
+        <div id="Earthquake" class="tabcontent">
+            <h3>Earthquake</h3>
+            <p></p>
+        </div>
+
+        <div id="Tsunami" class="tabcontent">
+            <h3>Tsunami</h3>
+            <p></p>
+        </div>
+
+        <div id="Wildfire" class="tabcontent">
+            <h3>Wildfire</h3>
+            <p></p>
+        </div>
+
+        <div id="Tornado" class="tabcontent">
+            <h3>Tornado</h3>
+            <p></p>
+        </div>
     </div>
 
-    <div id="Tsuname" class="tabcontent">
-        <h3>Tsuname</h3>
-        <p>somting</p>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+    </footer>
 
-        <h3>Tips</h3>
-        <p>something</p>
-    </div>
+    <script>
+        function openDisaster(evt, disasterName) {
+            const tabcontent = document.getElementsByClassName("tabcontent");
+            const tablinks = document.getElementsByClassName("tablinks");
 
-    <div id="Typhoon" class="tabcontent">
-        <h3>Typhoon</h3>
-        <p>somthing</p> 
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
 
-        <h3>Tips</h3>
-        <p>something</p>
-    </div>
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
 
-    <div id="Huricane" class="tabcontent">
-        <h3>Huricane</h3>
-        <p>something</p>
+            document.getElementById(disasterName).style.display = "block";
+            document.getElementById(disasterName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
 
-        <h3>Tips</h3>
-        <p>something</p>
-    </div>
-
-    <div class="clearfix"></div>
-
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".tablinks").dispatchEvent(new Event("mouseover"));
+        });
+    </script>
 </body>
+
 </html>
