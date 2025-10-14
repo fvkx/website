@@ -5,30 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Hotlines | Barangay Disaster Preparedness Portal</title>
-    <link rel="stylesheet" href="css/disasterPage.css"> <!-- reuse same css for now -->
     <link rel="stylesheet" href="css/HotlinePage.css">
 
 </head>
 
 <body>
-
-    <!-- HEADER -->
+    <!-- Header Section -->
     <header>
-        <div class="navbar">
-            <div class="logo">Barangay Disaster Preparedness Portal</div>
-            <ul>
-                <li><a href="HomePage.html">Home</a></li>
-                <li><a href="DisasterHomePage.html">Disasters</a></li>
-                <li><a href="HotlinePage.html" class="active">Hotlines</a></li>
-                <li><a href="newsUserPage.html">News</a></li>
-                <li><a href="adminLog-in.html">Admin</a></li>
-            </ul>
+        <div class="logo">
+            <h2>Barangay</h2>
+            <h6>Disaster Preparedness Portal</h6>
         </div>
+        <nav class="nav-menu">
+            <a href="HomePage.html">Home</a>
+            <a href="DisasterHomePage.html">Disasters</a>
+            <a href="HotlinePage.html">Hotlines</a>
+            <a href="newsUserPage.html">News</a>
+            <a href="adminLog-in.html" class="login-btn">Login</a>
+        </nav>
     </header>
-
-    <!-- TITLE -->
-    <h1>Emergency Hotlines</h1>
-
     <!-- MAIN HOTLINE SECTION -->
     <div class="hotline-container">
         <h2>Important Contact Numbers</h2>
@@ -62,8 +57,34 @@
     </div>
 
     <!-- FOOTER -->
-    <footer>
-        <p>© 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h3>Barangay</h3>
+                <p>Disaster Preparedness Portal</p>
+            </div>
+    
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="HomePage.html">Home</a></li>
+                    <li><a href="DisasterHomePage.html">Disasters</a></li>
+                    <li><a href="HotlinePage.html">Hotlines</a></li>
+                    <li><a href="#about">News</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
+                <p><strong>Phone:</strong> (02) 123-4567</p>
+                <p><strong>Location:</strong> Barangay Hall, PH</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+        </div>
     </footer>
 
 </body>

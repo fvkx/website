@@ -1,194 +1,322 @@
-/* === GENERAL === */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f3f7;
-  color: #333;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* === NAVBAR === */
-header {
-  background-color: #004aad;
-  padding: 15px 0;
-  color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.navbar .logo {
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.navbar ul {
-  list-style-type: none;
-  display: flex;
+/* ==============================
+   RESET
+============================== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar ul li {
-  margin-left: 25px;
+/* ==============================
+   BASE STYLES
+============================== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fb;
+  color: #000;
+  line-height: 1.6;
 }
 
-.navbar ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 17px;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+/* ================================
+     HEADER
+  ================================ */
+  header {
+    background: linear-gradient(135deg, #0028a3, #005dff);
+    color: #fff;
+    padding: 30px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+.logo img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
 }
 
-.navbar ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.navbar ul li a.active {
-  background-color: white;
-  color: #004aad;
-  font-weight: bold;
-}
-
-/* === PAGE TITLE === */
-h1 {
-  text-align: center;
-  color: #004aad;
-  margin: 25px 0 10px;
-  font-size: 2.2rem;
-}
-
-/* === MAIN CONTAINER === */
-.tab-container {
-  display: flex;
-  flex: 1;
-  width: 95%;
-  max-width: 1400px;
-  margin: 0 auto 30px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-/* === SIDEBAR (TABS) === */
-.tab {
-  width: 25%;
-  background-color: #004aad;
+.logo-text {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  line-height: 1.2;
+}
+
+.logo-text h2 {
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+}
+
+.logo-text h6 {
+  font-size: 13px;
+  color: #dbe7ff;
+  font-weight: 500;
+  margin: 0;
+}
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover and Active Effects */
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    background: #ffffff;
+    color: #0036b5;
+  }
+  
+  /* Login Button */
+  .nav-menu .login-btn {
+    background: #ffffff;
+    color: #0036b5;
+    border: 2px solid #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-menu .login-btn:hover {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+  }
+  
+/* ==============================
+   TAB CONTAINER
+============================== */
+.tab-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ==============================
+   TAB BUTTONS
+============================== */
+.tab {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
 .tab button {
-  background-color: inherit;
-  color: white;
-  padding: 25px 20px;
-  text-align: left;
-  border: none;
-  outline: none;
+  background-color: #ffffff;
+  color: #0044ff;
+  border: 2px solid #0044ff;
+  padding: 12px 22px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  transition: background-color 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
 }
 
 .tab button:hover {
-  background-color: #022c6f;
+  background-color: #0044ff;
+  color: #fff;
+  transform: scale(1.03);
 }
 
-.tab button.active {
-  background-color: #f8f9fa;
-  color: #004aad;
-  font-weight: bold;
+/* --- COLOR INDICATORS --- */
+.color-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
 }
 
-/* === CONTENT AREA === */
+.red { background-color: #ff3333; }
+.orange { background-color: #ff8800; }
+.yellow { background-color: #ffd633; }
+
+/* ==============================
+   TAB CONTENT
+============================== */
 .tabcontent {
-  width: 75%;
   display: none;
-  padding: 40px;
-  background-color: #f8f9fa;
-  overflow-y: auto;
-  scroll-behavior: smooth;
+  background: #f9faff;
+  border-radius: 10px;
+  padding: 25px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .tabcontent h3 {
-  color: #004aad;
-  font-size: 28px;
+  color: #0044ff;
+  font-size: 22px;
   margin-bottom: 10px;
 }
 
 .tabcontent p {
-  color: #333;
-  line-height: 1.8;
-  font-size: 17px;
-  text-align: justify;
+  margin-bottom: 12px;
+  line-height: 1.6;
 }
 
-/* Scrollbar style for the content panel */
-.tabcontent::-webkit-scrollbar {
-  width: 8px;
+.tabcontent ul {
+  margin-left: 20px;
+  margin-bottom: 12px;
 }
 
-.tabcontent::-webkit-scrollbar-thumb {
-  background-color: #004aad;
-  border-radius: 4px;
+.tabcontent ul li {
+  margin-bottom: 6px;
 }
 
-.tabcontent::-webkit-scrollbar-track {
-  background-color: #e1e4e8;
-}
-
-/* Active tab content */
-.tabcontent.active {
-  display: block;
-}
-
-/* === FOOTER === */
+/* ==============================
+   FOOTER
+============================== */
 footer {
-  background-color: #004aad;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 14px;
-  margin-top: auto;
+  background: linear-gradient(135deg, #0028a3, #0048d9);
+  color: #ffffff;
+  padding: 40px 60px 20px;
+  margin-top: 60px;
+  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.25);
+  font-family: "Poppins", sans-serif;
 }
 
-/* === RESPONSIVE DESIGN === */
-@media screen and (max-width: 768px) {
-  .tab-container {
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 20px;
+}
+
+/* --- LOGO SECTION --- */
+.footer-logo h3 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.footer-logo p {
+  margin-top: 5px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* --- CONTACT SECTION --- */
+.footer-contact h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.footer-contact p {
+  margin: 6px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-contact strong {
+  color: #dbe7ff;
+  font-weight: 600;
+}
+
+/* --- BOTTOM COPYRIGHT --- */
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.logo, .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img, .footer-logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+@media (max-width: 768px) {
+  .footer-container {
     flex-direction: column;
-    height: auto;
-  }
-
-  .tab {
-    width: 100%;
-    flex-direction: row;
-    overflow-x: auto;
-  }
-
-  .tab button {
-    flex: 1;
+    align-items: center;
     text-align: center;
-    padding: 15px;
-    border-bottom: none;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .tabcontent {
-    width: 100%;
-    height: 60vh;
+  .footer-contact {
+    margin-top: 20px;
+  }
+  .logo {
+    justify-content: center;
+  }
+  .logo img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px 30px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .logo h2 {
+    font-size: 26px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
   }
 }

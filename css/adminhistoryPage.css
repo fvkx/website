@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
-    color: #1c1e21;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .container {
@@ -18,7 +18,7 @@ body {
 /* Sidebar Styles */
 .sidebar {
     width: 280px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: rgb(22, 32, 206);
     color: white;
     padding: 30px 0;
     position: fixed;

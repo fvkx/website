@@ -3,126 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/newUserPage.css">
     <title>Posts Feed</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f0f2f5;
-        }
-
-        .header {
-            background-color: #fff;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header h1 {
-            color: #1877f2;
-            font-size: 32px;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 680px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        .posts-feed {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .post {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        .post-header {
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .post-author {
-            flex: 1;
-        }
-
-        .post-author-name {
-            font-weight: 600;
-            font-size: 15px;
-            color: #050505;
-        }
-
-        .post-time {
-            font-size: 13px;
-            color: #65676b;
-        }
-
-        .post-content {
-            padding: 0 16px 16px;
-            font-size: 15px;
-            line-height: 1.5;
-            color: #050505;
-        }
-
-        .post-image {
-            width: 100%;
-            display: block;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: #65676b;
-        }
-
-        .empty-state h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #050505;
-        }
-    </style>
 </head>
 <body>
-    <div class="header">
-        <h1>facebook</h1>
-    </div>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="images/brgy_logo.png" alt="Barangay Logo" class="logo-img">
+            <div>
+                <h2>Barangay</h2>
+                <h6>Disaster Preparedness Portal</h6>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <a href="HomePage.html">Home</a>
+            <a href="DisasterHomePage.html">Disasters</a>
+            <a href="HotlinePage.html">Hotlines</a>
+            <a href="#about">News</a>
+            <a href="adminLog-in.html" class="login-btn">Login</a>
+        </nav>
+    </header>
 
     <div class="container">
         <div class="posts-feed" id="postsFeed">
             <!-- Sample posts -->
             <div class="post">
                 <div class="post-header">
-                    <div class="avatar">J</div>
+                    <div class="avatar">BF</div>
                     <div class="post-author">
-                        <div class="post-author-name">John Doe</div>
+                        <div class="post-author-name">Barangay_Officials</div>
                         <div class="post-time">2 hours ago</div>
                     </div>
                 </div>
@@ -132,21 +42,21 @@
 
             <div class="post">
                 <div class="post-header">
-                    <div class="avatar">S</div>
+                    <div class="avatar">BF</div>
                     <div class="post-author">
-                        <div class="post-author-name">Sarah Smith</div>
+                        <div class="post-author-name">Barangay_Officials</div>
                         <div class="post-time">5 hours ago</div>
                     </div>
                 </div>
-                <div class="post-content">Morning coffee vibes ☕</div>
+                <div class="post-content">Barangay_officials</div>
                 <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=600&fit=crop" alt="Coffee" class="post-image">
             </div>
 
             <div class="post">
                 <div class="post-header">
-                    <div class="avatar">M</div>
+                    <div class="avatar">BF</div>
                     <div class="post-author">
-                        <div class="post-author-name">Mike Johnson</div>
+                        <div class="post-author-name">Barangay_Officials</div>
                         <div class="post-time">1 day ago</div>
                     </div>
                 </div>
@@ -155,5 +65,39 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/brgy_logo.png" alt="Barangay Logo" class="footer-logo-img">
+                <div>
+                    <h3>Barangay</h3>
+                    <p>Disaster Preparedness Portal</p>
+                </div>
+            </div>
+    
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="HomePage.html">Home</a></li>
+                    <li><a href="DisasterHomePage.html">Disasters</a></li>
+                    <li><a href="HotlinePage.html">Hotlines</a></li>
+                    <li><a href="#about">News</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
+                <p><strong>Phone:</strong> (02) 123-4567</p>
+                <p><strong>Location:</strong> Barangay Hall, PH</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+        </div>
+    </footer>
 </body>
 </html>

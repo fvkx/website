@@ -1,103 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disaster Information | Barangay Disaster Preparedness Portal</title>
-    <link rel="stylesheet" href="css/newHomePage.css">
-    <link rel="stylesheet" href="css/DisasterHomePage.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/DisasterHomePage.css">
+  <title>Disaster Information | Barangay Disaster Preparedness Portal</title>
 
+</head>
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <div class="navbar">
-            <div class="logo">Barangay Disaster Preparedness Portal</div>
-            <ul>
-                <li><a href="HomePage.html">Home</a></li>
-                <li><a href="DisasterHomePage.html" class="active">Disasters</a></li>
-                <li><a href="HotlinePage.html">Hotlines</a></li>
-                <li><a href="newsUserPage.html">News</a></li>
-                <li><a href="adminLog-in.html">Admin</a></li>
-            </ul>
+    <body>
+<!-- Header Section -->
+<header>
+    <div class="logo">
+      <img src="img/Picture1.png" alt="Barangay Logo">
+      <div class="logo-text">
+        <h2>Barangay</h2>
+        <h6>Disaster Preparedness Portal</h6>
+      </div>
+    </div>
+  
+    <nav class="nav-menu">
+      <a href="HomePage.html">Home</a>
+      <a href="DisasterHomePage.html">Disasters</a>
+      <a href="HotlinePage.html">Hotlines</a>
+      <a href="newsUserPage.html">News</a>
+      <a href="adminLog-in.html" class="login-btn">Login</a>
+    </nav>
+  </header>
+
+  <section class="tab-container">
+    <div class="tab">
+      <button onmouseover="openTab(event, 'Earthquake')">
+        <span class="color-indicator red"></span> Earthquake
+      </button>
+      <button onmouseover="openTab(event, 'Typhoon')">
+        <span class="color-indicator orange"></span> Typhoon
+      </button>
+      <button onmouseover="openTab(event, 'Flood')">
+        <span class="color-indicator yellow"></span> Flood
+      </button>
+      <button onmouseover="openTab(event, 'Fire')">
+        <span class="color-indicator red"></span> Fire
+      </button>
+      <button onmouseover="openTab(event, 'Landslide')">
+        <span class="color-indicator orange"></span> Landslide
+      </button>
+    </div>
+
+    <!-- EARTHQUAKE -->
+    <div id="Earthquake" class="tabcontent">
+      <h3>Earthquake</h3>
+      <p><strong>Description:</strong> Sudden shaking of the ground caused by movement of Earth's crust, which can damage buildings and infrastructure.</p>
+      <p><strong>How to Avoid:</strong></p>
+      <ul>
+        <li>Secure heavy furniture and shelves to walls.</li>
+        <li>Prepare an emergency kit with essentials.</li>
+        <li>Know safe spots in every room (under a sturdy table or corner).</li>
+      </ul>
+      <p><strong>What to Do If It Happens:</strong></p>
+      <ul>
+        <li>Drop, Cover, and Hold On.</li>
+        <li>Stay indoors until the shaking stops.</li>
+        <li>If outside, move away from buildings and power lines.</li>
+      </ul>
+    </div>
+
+    <!-- TYPHOON -->
+    <div id="Typhoon" class="tabcontent">
+      <h3>Typhoon</h3>
+      <p><strong>Description:</strong> A powerful tropical storm with strong winds and heavy rain that can cause flooding and destruction.</p>
+      <p><strong>How to Avoid:</strong></p>
+      <ul>
+        <li>Always check weather advisories.</li>
+        <li>Trim trees and secure loose objects outside.</li>
+        <li>Store emergency food, water, and batteries.</li>
+      </ul>
+      <p><strong>What to Do If It Happens:</strong></p>
+      <ul>
+        <li>Stay indoors and keep away from windows.</li>
+        <li>Turn off electrical power if flooding occurs.</li>
+        <li>Evacuate to higher ground when advised by authorities.</li>
+      </ul>
+    </div>
+
+    <!-- FLOOD -->
+    <div id="Flood" class="tabcontent">
+      <h3>Flood</h3>
+      <p><strong>Description:</strong> Overflow of water that submerges land, often caused by heavy rain or storm surges.</p>
+      <p><strong>How to Avoid:</strong></p>
+      <ul>
+        <li>Avoid dumping garbage that blocks drainage systems.</li>
+        <li>Build homes above known flood levels.</li>
+        <li>Always monitor rainfall and water levels.</li>
+      </ul>
+      <p><strong>What to Do If It Happens:</strong></p>
+      <ul>
+        <li>Move to higher ground immediately.</li>
+        <li>Turn off gas and electricity.</li>
+        <li>Do not walk or drive through floodwaters.</li>
+      </ul>
+    </div>
+
+    <!-- FIRE -->
+    <div id="Fire" class="tabcontent">
+      <h3>Fire</h3>
+      <p><strong>Description:</strong> Uncontrolled burning that can spread quickly and cause severe damage to property and life.</p>
+      <p><strong>How to Avoid:</strong></p>
+      <ul>
+        <li>Keep flammable materials away from heat sources.</li>
+        <li>Install smoke alarms in every room.</li>
+        <li>Never leave cooking unattended.</li>
+      </ul>
+      <p><strong>What to Do If It Happens:</strong></p>
+      <ul>
+        <li>Stay low and crawl under smoke.</li>
+        <li>Use a wet cloth to cover your nose and mouth.</li>
+        <li>Evacuate immediately and call emergency services.</li>
+      </ul>
+    </div>
+
+    <!-- LANDSLIDE -->
+    <div id="Landslide" class="tabcontent">
+      <h3>Landslide</h3>
+      <p><strong>Description:</strong> Movement of rock, soil, or debris down a slope due to rain, earthquakes, or human activity.</p>
+      <p><strong>How to Avoid:</strong></p>
+      <ul>
+        <li>Avoid building on steep slopes.</li>
+        <li>Plant trees and vegetation to prevent erosion.</li>
+        <li>Monitor cracks in walls or ground after heavy rains.</li>
+      </ul>
+      <p><strong>What to Do If It Happens:</strong></p>
+      <ul>
+        <li>Move away from the path of the slide immediately.</li>
+        <li>Go to higher, stable ground.</li>
+        <li>Listen to local authorities for evacuation updates.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <script>
+    function openTab(evt, tabName) {
+      const tabcontent = document.querySelectorAll(".tabcontent");
+      tabcontent.forEach(tab => tab.style.display = "none");
+
+      const tablinks = document.querySelectorAll(".tab button");
+      tablinks.forEach(btn => btn.classList.remove("active"));
+
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.classList.add("active");
+    }
+
+    // Show first tab by default
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".tab button").dispatchEvent(new Event("mouseover"));
+    });
+  </script>
+<footer class="footer">
+    <div class="footer-container">
+         <img src="img/Picture2.png" alt="Logo" style="width:60px; height:60px; margin-right:10px;">
+        <div class="footer-logo">
+            <h3>Barangay</h3>
+            <p>Disaster Preparedness Portal</p>
         </div>
-    </header>
 
-    <!-- TITLE -->
-    <h1>Disaster Information</h1>
-
-    <!-- MAIN CONTENT -->
-    <div class="tab-container">
-        <div class="tab">
-            <button class="tablinks" onmouseover="openDisaster(event, 'Flood')">Flood</button>
-            <button class="tablinks" onmouseover="openDisaster(event, 'Hurricane')">Hurricane</button>
-            <button class="tablinks" onmouseover="openDisaster(event, 'Earthquake')">Earthquake</button>
-            <button class="tablinks" onmouseover="openDisaster(event, 'Tsunami')">Tsunami</button>
-            <button class="tablinks" onmouseover="openDisaster(event, 'Wildfire')">Wildfire</button>
-            <button class="tablinks" onmouseover="openDisaster(event, 'Tornado')">Tornado</button>
-        </div>
-
-        <div id="Flood" class="tabcontent">
-            <h3>Flood</h3>
-            <p></p>
-        </div>
-
-        <div id="Hurricane" class="tabcontent">
-            <h3>Hurricane</h3>
-            <p></p>
-        </div>
-
-        <div id="Earthquake" class="tabcontent">
-            <h3>Earthquake</h3>
-            <p></p>
-        </div>
-
-        <div id="Tsunami" class="tabcontent">
-            <h3>Tsunami</h3>
-            <p></p>
-        </div>
-
-        <div id="Wildfire" class="tabcontent">
-            <h3>Wildfire</h3>
-            <p></p>
-        </div>
-
-        <div id="Tornado" class="tabcontent">
-            <h3>Tornado</h3>
-            <p></p>
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
+            <p><strong>Phone:</strong> (02) 123-4567</p>
+            <p><strong>Location:</strong> Barangay Hall, PH</p>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
-    </footer>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+    </div>
+</footer>
 
-    <script>
-        function openDisaster(evt, disasterName) {
-            const tabcontent = document.getElementsByClassName("tabcontent");
-            const tablinks = document.getElementsByClassName("tablinks");
-
-            for (let i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-                tabcontent[i].classList.remove("active");
-            }
-
-            for (let i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-
-            document.getElementById(disasterName).style.display = "block";
-            document.getElementById(disasterName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelector(".tablinks").dispatchEvent(new Event("mouseover"));
-        });
-    </script>
 </body>
-
 </html>

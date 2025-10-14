@@ -3,115 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/adminlog-in.css">
+    <script src="script/script.js"></script>
     <title>Login - Barangay Disaster Portal</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 1rem;
-        }
-        
-        .login-container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 5, 71, 0.1);
-            width: 100%;
-            max-width: 400px;
-            padding: 2.5rem;
-            border-top: 5px solid #0047AA;
-        }
-        
-        .login-title {
-            color: #000547;
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            text-align: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #000547;
-            font-weight: 500;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .form-group input:focus {
-            border-color: #0047AA;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(0, 71, 170, 0.2);
-        }
-        
-        .login-button {
-            background: #0047AA;
-            color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            width: 100%;
-            font-size: 1rem;
-            margin-top: 0.5rem;
-        }
-        
-        .login-button:hover {
-            background: #000547;
-        }
-        
-        .form-footer {
-            margin-top: 1.5rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .form-footer a {
-            color: #0047AA;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .form-footer a:hover {
-            color: #000547;
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <div class="login-container">
         <h2 class="login-title">User Log-in</h2>
         
-        <form action="HomePage.html" method="POST">
+        <div id="error-message" class="error-message"></div>
+        
+        <form onsubmit="event.preventDefault(); window.location.href='index.html';">
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
             </div>
             
             <div class="form-group">
@@ -119,7 +24,7 @@
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
             
-            <button type="submit" class="login-button">Log-In</button>
+            <button type="submit" class="login-button">Log-In</button>  
         </form>
         
         <div class="form-footer">
