@@ -17,28 +17,28 @@ body {
   line-height: 1.6;
 }
 
-/* ================================
-     HEADER
-  ================================ */
-  header {
-    background: linear-gradient(135deg, #0028a3, #005dff);
-    color: #fff;
-    padding: 30px 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+/* ==============================
+   HEADER
+============================== */
+header {
+  background: linear-gradient(135deg, #0028a3, #005dff);
+  color: #fff;
+  padding: 30px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
 .logo img {
   width: 55px;
@@ -57,55 +57,54 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   color: #ffffff;
-  margin: 0;
 }
 
 .logo-text h6 {
   font-size: 13px;
   color: #dbe7ff;
   font-weight: 500;
-  margin: 0;
+  margin-top: 2px;
 }
-  .nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-  }
-  
-  .nav-menu a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 10px 18px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-  
-  /* Hover and Active Effects */
-  .nav-menu a:hover,
-  .nav-menu a.active {
-    background: #ffffff;
-    color: #0036b5;
-  }
-  
-  /* Login Button */
-  .nav-menu .login-btn {
-    background: #ffffff;
-    color: #0036b5;
-    border: 2px solid #ffffff;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-menu .login-btn:hover {
-    background: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-  }
-  
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background: #ffffff;
+  color: #0036b5;
+}
+
+/* Login Button */
+.nav-menu .login-btn {
+  background: #ffffff;
+  color: #0036b5;
+  border: 2px solid #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.nav-menu .login-btn:hover {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
 /* ==============================
    TAB CONTAINER
 ============================== */
@@ -151,7 +150,6 @@ body {
   transform: scale(1.03);
 }
 
-/* --- COLOR INDICATORS --- */
 .color-indicator {
   width: 14px;
   height: 14px;
@@ -186,7 +184,6 @@ body {
 
 .tabcontent p {
   margin-bottom: 12px;
-  line-height: 1.6;
 }
 
 .tabcontent ul {
@@ -214,12 +211,24 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   gap: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 20px;
 }
 
-/* --- LOGO SECTION --- */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
 .footer-logo h3 {
   font-size: 26px;
   font-weight: 700;
@@ -233,12 +242,10 @@ footer {
   opacity: 0.9;
 }
 
-/* --- CONTACT SECTION --- */
 .footer-contact h4 {
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: 600;
-  color: #ffffff;
 }
 
 .footer-contact p {
@@ -252,46 +259,11 @@ footer {
   font-weight: 600;
 }
 
-/* --- BOTTOM COPYRIGHT --- */
 .footer-bottom {
   text-align: center;
   padding-top: 15px;
   font-size: 13px;
   opacity: 0.8;
-}
-
-.logo, .footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-img, .footer-logo-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
-/* ==============================
-   RESPONSIVE DESIGN
-============================== */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-contact {
-    margin-top: 20px;
-  }
-  .logo {
-    justify-content: center;
-  }
-  .logo img {
-    width: 45px;
-    height: 45px;
-  }
 }
 
 /* ==============================
@@ -304,13 +276,18 @@ footer {
     text-align: center;
   }
 
-  nav ul {
+  .nav-menu {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    margin-top: 10px;
   }
 
-  .logo h2 {
+  .logo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logo-text h2 {
     font-size: 26px;
   }
 
@@ -318,5 +295,13 @@ footer {
     flex-direction: column;
     text-align: center;
     gap: 20px;
+  }
+
+  .footer-left {
+    justify-content: center;
+  }
+
+  .footer-contact {
+    margin-top: 10px;
   }
 }

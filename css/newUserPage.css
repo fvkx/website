@@ -13,11 +13,10 @@
     color: #1a1a1a;
     line-height: 1.6;
   }
-  
-/* ================================
-     HEADER
-  ================================ */
-  header {
+/* ==============================
+   HEADER
+============================== */
+header {
     background: linear-gradient(135deg, #0028a3, #005dff);
     color: #fff;
     padding: 30px 80px;
@@ -33,23 +32,34 @@
   
   .logo {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 12px;
   }
   
-  .logo h2 {
-    font-size: 32px;
+  .logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+  }
+  
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+  
+  .logo-text h2 {
+    font-size: 30px;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
     color: #ffffff;
   }
   
-  .logo h6 {
+  .logo-text h6 {
     font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 1px;
     color: #dbe7ff;
+    font-weight: 500;
+    margin-top: 2px;
   }
   
   .nav-menu {
@@ -68,7 +78,6 @@
     transition: all 0.3s ease;
   }
   
-  /* Hover and Active Effects */
   .nav-menu a:hover,
   .nav-menu a.active {
     background: #ffffff;
@@ -184,76 +193,72 @@
    FOOTER
 ============================== */
 footer {
-    background: #0028a3;
-    color: #ffffff;
-    padding: 40px 60px 20px;
-    margin-top: 60px;
-    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 20px;
-  }
-  
-  .footer-logo h3 {
-    font-size: 26px;
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  
-  .footer-logo p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    opacity: 0.9;
-  }
-  
-  .footer-links h4,
-  .footer-contact h4 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-  
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footer-links ul li {
-    margin-bottom: 6px;
-  }
-  
-  .footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
-  }
-  
-  .footer-links a:hover {
-    color: #dbe7ff;
-  }
-  
-  .footer-contact p {
-    margin: 6px 0;
-    font-size: 14px;
-    line-height: 1.4;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    padding-top: 10px;
-    font-size: 13px;
-    opacity: 0.8;
-  }
+  background: linear-gradient(135deg, #0028a3, #0048d9);
+  color: #ffffff;
+  padding: 40px 60px 20px;
+  margin-top: 60px;
+  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.25);
+  font-family: "Poppins", sans-serif;
+}
 
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 20px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.footer-logo h3 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.footer-logo p {
+  margin-top: 5px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.footer-contact h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer-contact p {
+  margin: 6px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-contact strong {
+  color: #dbe7ff;
+  font-weight: 600;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 13px;
+  opacity: 0.8;
+}
   /* ================================
      RESPONSIVE DESIGN
   ================================ */
