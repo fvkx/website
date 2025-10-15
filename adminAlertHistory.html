@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/adminhistoryPage.css">
+    <title>Alert History - Disaster Alert System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/adminhistoryPage.css">
+    <script src="script/alert.js"></script>
 </head>
 
 <body>
@@ -16,69 +17,99 @@
                 <h2>AlertAdmin</h2>
             </div>
             <ul class="nav-links">
-                <li data-tab="alert-tab"><a href="adminHomePage.html"><i class="fas fa-bell"></i> SMS Alerts</a></li>
-                <li data-tab="social-tab"><a href="adminNewsPage.html"><i class="fas fa-newspaper"></i> Social Feed</a></li>
-                <li><a href="#"><i class="fas fa-history"></i> Alert History</a></li>
+                <li class="active"><a href="adminAlertHistory.html"><i class="fas fa-history"></i><span> Alert History</span></a></li>
+                <li><a href="adminHomePage.html"><i class="fas fa-bell"></i><span> SMS Alerts</span></a></li>
+                <li><a href="adminNewsPage.html"><i class="fas fa-newspaper"></i><span> Social Feed</span></a></li>
             </ul>
-        </div>
 
+            <!-- Admin Profile Section -->
+            <div class="admin-profile">
+                <img src="img/Picture2.png" alt="Admin Profile">
+                <div class="admin-profile-info">
+                    <strong>Admin User</strong>
+                    <span>Administrator</span>
+                </div>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="logout-btn">
+                <button onclick="handleLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
 
         <!-- Main Content -->
         <div class="main-content">
             <div class="header">
                 <h1>Disaster Alert System</h1>
                 <div class="user-info">
-                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=3498db&color=fff" alt="Admin">
+                    <img src="img/Picture2.png" alt="Admin">
                     <span>Admin User</span>
                 </div>
             </div>
 
-        <!-- Alert History -->
-        <div class="alert-history">
-            <h2>Recent Alert History</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date & Time</th>
-                        <th>Disaster Type</th>
-                        <th>Message</th>
-                        <th>Recipients</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2023-10-15 14:30</td>
-                        <td>Hurricane</td>
-                        <td>Hurricane warning: Evacuate coastal areas immediately.</td>
-                        <td>All Users (1,247)</td>
-                        <td><span class="status sent">Sent</span></td>
-                    </tr>
-                    <tr>
-                        <td>2023-10-14 09:15</td>
-                        <td>Earthquake</td>
-                        <td>Earthquake detected. Seek shelter immediately.</td>
-                        <td>All Users (1,247)</td>
-                        <td><span class="status sent">Sent</span></td>
-                    </tr>
-                    <tr>
-                        <td>2023-10-13 16:45</td>
-                        <td>Flood</td>
-                        <td>Flash flood warning for low-lying areas.</td>
-                        <td>All Users (1,247)</td>
-                        <td><span class="status sent">Sent</span></td>
-                    </tr>
-                    <tr>
-                        <td>2023-10-12 11:20</td>
-                        <td>Wildfire</td>
-                        <td>Wildfire spreading. Evacuation order for Region 3.</td>
-                        <td>All Users (1,247)</td>
-                        <td><span class="status sent">Sent</span></td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Alert History -->
+            <div class="alert-history">
+                <h2>Recent Alert History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Disaster Type</th>
+                            <th>Message</th>
+                            <th>Recipients</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023-10-15 14:30</td>
+                            <td>Hurricane</td>
+                            <td>Hurricane warning: Evacuate coastal areas immediately.</td>
+                            <td>All Users (1,247)</td>
+                            <td><span class="status sent">Sent</span></td>
+                        </tr>
+                        <tr>
+                            <td>2023-10-14 09:15</td>
+                            <td>Earthquake</td>
+                            <td>Earthquake detected. Seek shelter immediately.</td>
+                            <td>All Users (1,247)</td>
+                            <td><span class="status sent">Sent</span></td>
+                        </tr>
+                        <tr>
+                            <td>2023-10-13 16:45</td>
+                            <td>Flood</td>
+                            <td>Flash flood warning for low-lying areas.</td>
+                            <td>All Users (1,247)</td>
+                            <td><span class="status sent">Sent</span></td>
+                        </tr>
+                        <tr>
+                            <td>2023-10-12 11:20</td>
+                            <td>Wildfire</td>
+                            <td>Wildfire spreading. Evacuation order for Region 3.</td>
+                            <td>All Users (1,247)</td>
+                            <td><span class="status sent">Sent</span></td>
+                        </tr>
+                        <tr>
+                            <td>2023-10-11 08:00</td>
+                            <td>Tornado</td>
+                            <td>Tornado warning. Take cover immediately in a safe location.</td>
+                            <td>All Users (1,247)</td>
+                            <td><span class="status sent">Sent</span></td>
+                        </tr>
+                        <tr>
+                            <td>2023-10-10 19:30</td>
+                            <td>Tsunami</td>
+                            <td>Tsunami alert. Move to higher ground immediately.</td>
+                            <td>All Users (1,247)</td>
+                            <td><span class="status sent">Sent</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>  
 </body>
-</head>
+</html>

@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
+    background-color: #f0f2f5;
     color: #000000;
 }
 
@@ -18,12 +18,14 @@ body {
 /* Sidebar Styles */
 .sidebar {
     width: 280px;
-    background: rgb(22, 32, 206);
+    background: #0047AA;
     color: white;
     padding: 30px 0;
     position: fixed;
     height: 100vh;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
@@ -41,6 +43,7 @@ body {
 .nav-links {
     list-style: none;
     padding: 0;
+    flex: 1;
 }
 
 .nav-links li {
@@ -73,6 +76,70 @@ body {
     width: 20px;
 }
 
+/* Admin Profile in Sidebar */
+.admin-profile {
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.admin-profile-info {
+    flex: 1;
+}
+
+.admin-profile-info strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.admin-profile-info span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Logout Button */
+.logout-btn {
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logout-btn button {
+    width: 100%;
+    background: #e74c3c; /* 🔴 permanent red */
+    border: 2px solid #e74c3c;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.logout-btn button:hover {
+    background: #c0392b;
+    border-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+.logout-btn button i {
+    font-size: 18px;
+}
+
 /* Main Content */
 .main-content {
     margin-left: 280px;
@@ -93,7 +160,7 @@ body {
 }
 
 .header h1 {
-    color: #667eea;
+    color: #0047AA;
     font-size: 28px;
     font-weight: 700;
 }
@@ -108,7 +175,7 @@ body {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 2px solid #667eea;
+    border: 2px solid #0047AA;
 }
 
 .user-info span {
@@ -130,7 +197,7 @@ body {
     font-weight: 700;
     margin-bottom: 25px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #667eea;
+    border-bottom: 2px solid #0047AA;
 }
 
 /* Table Styles */
@@ -141,7 +208,7 @@ table {
 }
 
 thead {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #0047AA;
 }
 
 thead tr th {
@@ -184,7 +251,7 @@ tbody tr td {
 
 tbody tr td:nth-child(2) {
     font-weight: 600;
-    color: #667eea;
+    color: #0047AA;
 }
 
 tbody tr td:nth-child(3) {
@@ -267,6 +334,24 @@ tbody tr td:nth-child(4) {
 
     .nav-links a:hover {
         padding-left: 10px;
+    }
+
+    .admin-profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 10px;
+    }
+
+    .admin-profile-info span {
+        display: none;
+    }
+
+    .logout-btn {
+        padding: 15px 10px;
+    }
+
+    .logout-btn button span {
+        display: none;
     }
 
     .main-content {
@@ -366,10 +451,10 @@ tbody tr td:nth-child(4) {
 }
 
 .alert-history::-webkit-scrollbar-thumb {
-    background: #667eea;
+    background: #0047AA;
     border-radius: 10px;
 }
 
 .alert-history::-webkit-scrollbar-thumb:hover {
-    background: #764ba2;
+    background: #003580;
 }

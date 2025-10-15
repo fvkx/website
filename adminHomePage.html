@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/adminHomePage.css">
+    <script src="script/adminHomeScript.js"></script>
     <title>Disaster Alert System - Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/adminHomePage.css">
-    <script src="script/adminHomeScript.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -16,18 +16,35 @@
                 <h2>AlertAdmin</h2>
             </div>
             <ul class="nav-links">
-                <li class="active"><a href="adminHomePage.html"><i class="fas fa-bell"></i> SMS Alerts</a></li>
-                <li><a href="adminNewsPage.html"><i class="fas fa-newspaper"></i> Social Feed</a></li>
-                <li><a href="adminAlertHistory.html"><i class="fas fa-history"></i> Alert History</a></li>
+                <li><a href="adminAlertHistory.html"><i class="fas fa-history"></i><span> Alert History</span></a></li>
+                <li class="active"><a href="adminHomePage.html"><i class="fas fa-bell"></i><span> SMS Alerts</span></a></li>
+                <li><a href="adminNewsPage.html"><i class="fas fa-newspaper"></i><span> Social Feed</span></a></li>
             </ul>
-        </div>
+
+            <!-- Admin Profile Section -->
+            <div class="admin-profile">
+                <img src="img/Picture2.png" alt="Admin Profile">
+                <div class="admin-profile-info">
+                    <strong>Admin User</strong>
+                    <span>Administrator</span>
+                </div>
+            </div>
+
+            <!-- Logout Button -->
+            <div class="logout-btn">
+                <button type="button" onclick="handleLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div> <!-- ✅ Missing sidebar closing tag added here -->
 
         <!-- Main Content -->
         <div class="main-content">
             <div class="header">
                 <h1>Disaster Alert System</h1>
                 <div class="user-info">
-                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=3498db&color=fff" alt="Admin">
+                    <img src="img/Picture2.png" alt="Admin">
                     <span>Admin User</span>
                 </div>
             </div>
@@ -95,7 +112,7 @@
                     </div>
                 </form>
             </div>
-        </div> <!-- Closing main-content -->
-    </div> <!-- Closing container -->
+        </div>
+    </div>
 </body>
 </html>

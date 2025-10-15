@@ -1,60 +1,52 @@
-// Character counter for message
-const messageInput = document.getElementById('message');
-const charCount = document.getElementById('charCount');
+// Wait for the page to load
+document.addEventListener("DOMContentLoaded", function () {
 
-if (messageInput && charCount) {
-    messageInput.addEventListener('input', function() {
-        charCount.textContent = this.value.length;
-        
-        // Change color if approaching limit
-        if (this.value.length > 140) {
-            charCount.style.color = '#e74c3c';
-        } else if (this.value.length > 120) {
-            charCount.style.color = '#f39c12';
-        } else {
-            charCount.style.color = '#65676b';
-        }
+    const sendBtn = document.getElementById("sendBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+    const messageInput = document.getElementById("message");
+    const charCount = document.getElementById("charCount");
+
+    // 🧾 Update character counter
+    messageInput.addEventListener("input", function () {
+        charCount.textContent = messageInput.value.length;
     });
-}
 
-// Send button functionality
-const sendBtn = document.getElementById('sendBtn');
-if (sendBtn) {
-    sendBtn.addEventListener('click', function() {
-        const disasterType = document.getElementById('disasterType').value;
-        const severity = document.getElementById('severity').value;
-        const message = document.getElementById('message').value;
-        
+    // 🚨 Handle Send Alert button
+    sendBtn.addEventListener("click", function () {
+        const disasterType = document.getElementById("disasterType").value;
+        const severity = document.getElementById("severity").value;
+        const message = messageInput.value.trim();
+
         if (!disasterType || !severity || !message) {
-            alert('Please fill in all required fields.');
+            alert("⚠️ Please fill out all fields before sending an alert.");
             return;
         }
-        
-        if (message.length > 160) {
-            alert('Message is too long. Maximum 160 characters allowed.');
-            return;
-        }
-        
-        // In a real application, this would send the data to a server
-        alert(`Alert sent to all users!\n\nDisaster: ${disasterType}\nSeverity: ${severity}\nMessage: ${message}`);
-        
-        // Reset form
-        document.getElementById('smsForm').reset();
-        charCount.textContent = '0';
-        charCount.style.color = '#65676b';
-    });
-}
 
-// Cancel button functionality
-const cancelBtn = document.getElementById('cancelBtn');
-if (cancelBtn) {
-    cancelBtn.addEventListener('click', function() {
-        if (confirm('Are you sure you want to cancel? All entered data will be lost.')) {
-            document.getElementById('smsForm').reset();
-            if (charCount) {
-                charCount.textContent = '0';
-                charCount.style.color = '#65676b';
-            }
+        // Confirm before sending
+        const confirmSend = confirm(`Send ${severity.toUpperCase()} alert for ${disasterType.toUpperCase()}?`);
+        if (confirmSend) {
+            alert("✅ Alert has been sent successfully!");
+            document.getElementById("smsForm").reset();
+            charCount.textContent = "0";
         }
     });
+
+    // ❌ Handle Cancel button
+    cancelBtn.addEventListener("click", function () {
+        const confirmCancel = confirm("Are you sure you want to clear this form?");
+        if (confirmCancel) {
+            document.getElementById("smsForm").reset();
+            charCount.textContent = "0";
+            alert("Form cleared.");
+        }
+    });
+});
+
+// 🔐 Logout confirmation
+function handleLogout() {
+    const confirmLogout = confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+        alert("You have been logged out.");
+        window.location.href = "HomePage.html"; // redirect to homepage
+    }
 }
