@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evacuation Maps - Barangay Disaster Preparedness Portal</title>
+    <link rel="stylesheet" href="css/evacuationmap.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <img src="img/Picture2.png" alt="Barangay Logo">
+            <div class="logo-text">
+                <h2>Barangay</h2>
+                <h6>Disaster Preparedness Portal</h6>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="HomePage.html">Home</a>
+            <a href="DisasterHomePage.html">Disasters</a>
+            <a href="evacutionmap.html">Evacuation Maps</a>
+            <a href="HotlinePage.html">Hotlines</a>
+            <a href="newsUserPage.html">News</a>
+            <a href="aboutpage.html">About</a>
+            <a href="adminLog-in.html" class="login-btn">Login</a>
+
+            <!-- Multi-language Button -->
+            <select class="language-select">
+                <option value="en">English</option>
+                <option value="fil">Filipino</option>
+                <option value="bis">Bisaya</option>
+            </select>
+        </nav>
+    </header>
+
+    <!-- ===== EVACUATION MAP IMAGE SECTION ===== -->
+    <section class="map-section">
+        <h2 class="section-title">Evacuation Maps</h2>
+
+        <div class="map-viewer">
+            <!-- Hidden radio buttons for each map -->
+            <input type="radio" name="mapSelect" id="map1" checked>
+            <input type="radio" name="mapSelect" id="map2">
+            <input type="radio" name="mapSelect" id="map3">
+            <input type="radio" name="mapSelect" id="map4">
+            <input type="radio" name="mapSelect" id="map5">
+
+            <!-- MAIN MAP DISPLAY -->
+            <div class="map-display">
+                <!-- Map 1 -->
+                <div class="map-content" id="content1">
+                    <img src="img/BRGY31.png" alt="Barangay 3 Evacuation Map">
+                    <h3>Barangay 3 Evacuation Map</h3>
+                    <p>Locate safe zones and designated evacuation centers during disasters.</p>
+                </div>
+
+                <!-- Map 2 -->
+                <div class="map-content" id="content2">
+                    <img src="img/BRGY31.png" alt="Barangay 1 Evacuation Map">
+                    <h3>Barangay 1 Evacuation Map</h3>
+                    <p>Barangay Hall – The main coordination and relief site for all residents.</p>
+                </div>
+
+                <!-- Map 3 -->
+                <div class="map-content" id="content3">
+                    <img src="img/BRGY31.png" alt="Barangay 2 Evacuation Map">
+                    <h3>Barangay 2 Evacuation Map</h3>
+                    <p>Covered Court – Large area used for family shelters and relief operations.</p>
+                </div>
+
+                <!-- Map 4 -->
+                <div class="map-content" id="content4">
+                    <img src="img/BRGY31.png" alt="Barangay 4 Evacuation Map">
+                    <h3>Barangay 4 Evacuation Map</h3>
+                    <p>Central School – Equipped for temporary housing and food distribution.</p>
+                </div>
+
+                <!-- Map 5 -->
+                <div class="map-content" id="content5">
+                    <img src="img/BRGY31.png" alt="Barangay 5 Evacuation Map">
+                    <h3>Barangay 5 Evacuation Map</h3>
+                    <p>Parish Compound – Elevated ground safe from floods and heavy rain.</p>
+                </div>
+            </div>
+
+            <!-- THUMBNAIL SELECTORS -->
+            <div class="map-thumbnails">
+                <label for="map1" class="thumb">
+                    <img src="img/BRGY31.png" alt="Barangay 3 Evacuation Map">
+                </label>
+                <label for="map2" class="thumb">
+                    <img src="img/BRGY31.png" alt="Barangay 1 Evacuation Map">
+                </label>
+                <label for="map3" class="thumb">
+                    <img src="img/BRGY31.png" alt="Barangay 2 Evacuation Map">
+                </label>
+                <label for="map4" class="thumb">
+                    <img src="img/BRGY31.png" alt="Barangay 4 Evacuation Map">
+                </label>
+                <label for="map5" class="thumb">
+                    <img src="img/BRGY31.png" alt="Barangay 5 Evacuation Map">
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="img/Picture2.png" alt="Logo" class="footer-logo-img">
+                <div class="footer-logo-text">
+                    <h3>Barangay</h3>
+                    <p>Disaster Preparedness Portal</p>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
+                <p><strong>Phone:</strong> (02) 123-4567</p>
+                <p><strong>Location:</strong> Barangay Hall, PH</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>

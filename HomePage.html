@@ -12,27 +12,35 @@
 
   <!-- ===== HEADER ===== -->
   <header>
-    <div class="logo-container">
-      <img src="img/brgylogo.png" alt="Barangay 3 Logo" class="logo-img" />
+    <div class="logo">
+      <img src="img/Picture2.png" alt="Barangay Logo">
       <div class="logo-text">
-        <h2>Barangay 3</h2>
+        <h2>Barangay</h2>
         <h6>Disaster Preparedness Portal</h6>
       </div>
     </div>
 
     <nav class="nav-menu">
-        <a href="HomePage.html">Home</a>
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="LoginPage.html" class="login-btn">Login</a>
+      <a href="HomePage.html">Home</a>
+      <a href="aboutpage.html">About</a>
+      <a href="#features">Features</a>
+      <a href="adminLog-in.html" class="login-btn">Login</a>
+
+      <!-- Multi-language Button -->
+      <select class="language-select">
+        <option value="en">English</option>
+        <option value="fil">Filipino</option>
+        <option value="bis">Bisaya</option>
+      </select>
     </nav>
   </header>
+
 
   <!-- ===== HERO SECTION ===== -->
   <section class="home">
     <div class="overlay"></div>
     <div class="hero-text">
-      <h2>Disaster Risk Preparedness Portal</h2>
+      <h2>Barangay Disaster Preparedness Portal</h2>
       <p>Your central hub for disaster information, alerts, and safety resources in our barangay.</p>
     </div>
   </section>
@@ -54,7 +62,7 @@
     <div class="box">
       <h3 class="heading">Evacuation Maps</h3>
       <p>Interactive maps showing evacuation centers, safe routes, and hazard zones in our barangay.</p>
-      <a href="#" class="button">More Details</a>
+      <a href="evacutionmap.html" class="button">More Details</a>
     </div>
 
     <div class="box">
@@ -65,10 +73,28 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>&copy; 2025 Barangay 3 Disaster Preparedness Portal <br> ST. Rita's College of Balingasag</p>
-  </footer>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="img/Picture2.png" alt="Logo" class="footer-logo-img">
+        <div class="footer-logo-text">
+          <h3>Barangay</h3>
+          <p>Disaster Preparedness Portal</p>
+        </div>
+      </div>
 
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
+        <p><strong>Phone:</strong> (02) 123-4567</p>
+        <p><strong>Location:</strong> Barangay Hall, PH</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+    </div>
+  </footer>
 </body>
 
 </html>
