@@ -3,93 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/newUserPage.css">
     <title>Posts Feed</title>
+    <style>
+        /* ================================
+           RESET + BASE
+        ================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6fb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* ==============================
+           HEADER
+        ============================== */
+        header {
+            background: linear-gradient(135deg, #0028a3, #005dff);
+            color: #fff;
+            padding: 30px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-text h2 {
+            font-size: 30px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+        
+        .logo-text h6 {
+            font-size: 13px;
+            color: #dbe7ff;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: #ffffff;
+            color: #0036b5;
+        }
+        
+        /* Login Button */
+        .nav-menu .login-btn {
+            background: #ffffff;
+            color: #0036b5;
+            border: 2px solid #ffffff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu .login-btn:hover {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+        }
+        
+        /* ================================
+           POSTS FEED CONTAINER
+        ================================ */
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+        }
+        
+        .posts-feed {
+            width: 90%;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        /* ================================
+           POST CARD
+        ================================ */
+        .post {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .post:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Post Header */
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 12px;
+        }
+        
+        .post-author {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .post-author-name {
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .post-time {
+            font-size: 13px;
+            color: #777;
+        }
+        
+        /* Post Content */
+        .post-content {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #222;
+        }
+        
+        /* Post Image */
+        .post-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .post-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* ==============================
+           FOOTER
+        ============================== */
+        footer {
+            background: linear-gradient(135deg, #0028a3, #0048d9);
+            color: #ffffff;
+            padding: 40px 60px 20px;
+            margin-top: 60px;
+            box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.25);
+            font-family: "Poppins", sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 20px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-logo-img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .footer-logo-text h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .footer-logo-text p {
+            margin-top: 5px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .footer-contact h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .footer-contact p {
+            margin: 6px 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer-contact strong {
+            color: #dbe7ff;
+            font-weight: 600;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 15px;
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        /* ================================
+           RESPONSIVE DESIGN
+        ================================ */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 20px;
+            }
+        
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 10px;
+            }
+        
+            .logo h2 {
+                font-size: 26px;
+            }
+        
+            .posts-feed {
+                width: 95%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
-<!-- Header Section -->
-<header>
-    <div class="logo">
-      <img src="img/Picture1.png" alt="Barangay Logo">
-      <div class="logo-text">
-        <h2>Barangay</h2>
-        <h6>Disaster Preparedness Portal</h6>
-      </div>
-    </div>
-  
-    <nav class="nav-menu">
-      <a href="HomePage.html">Home</a>
-      <a href="DisasterHomePage.html">Disasters</a>
-      <a href="HotlinePage.html">Hotlines</a>
-      <a href="newsUserPage.html">News</a>
-      <a href="adminLog-in.html" class="login-btn">Login</a>
-    </nav>
-  </header>
+    <header>
+        <div class="logo">
+            <img src="img/Picture1.png" alt="Barangay Logo">
+            <div class="logo-text">
+                <h2>Barangay</h2>
+                <h6>Disaster Preparedness Portal</h6>
+            </div>
+        </div>
+    
+        <nav class="nav-menu">
+            <a href="HomePage.html">Home</a>
+            <a href="DisasterHomePage.html">Disasters</a>
+            <a href="HotlinePage.html">Hotlines</a>
+            <a href="newsUserPage.html">News</a>
+            <a href="adminLog-in.html" class="login-btn">Login</a>
+        </nav>
+    </header>
 
     <div class="container">
         <div class="posts-feed" id="postsFeed">
             <!-- Sample posts -->
             <div class="post">
                 <div class="post-header">
-                    <div class="avatar">BF</div>
+                    <img src="img/Picture1.png" alt="Barangay Officials" class="avatar">
                     <div class="post-author">
                         <div class="post-author-name">Barangay_Officials</div>
                         <div class="post-time">2 hours ago</div>
                     </div>
                 </div>
-                <div class="post-content">Beautiful sunset today! 🌅</div>
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop" alt="Sunset" class="post-image">
+                <div class="post-content"></div>
+                <img src="https://i.natgeofe.com/n/79dd0b3b-0038-4d3c-a947-a8e3a0ecb9d5/52801.jpg" alt="Sunset" class="post-image">
             </div>
 
             <div class="post">
                 <div class="post-header">
-                    <div class="avatar">BF</div>
+                    <img src="img/Picture1.png" alt="Barangay Officials" class="avatar">
                     <div class="post-author">
-                        <div class="post-author-name">Barangay_Officials</div>
+                        <div class="post-author-name">Barangay Officials</div>
                         <div class="post-time">5 hours ago</div>
                     </div>
                 </div>
-                <div class="post-content">Barangay_officials</div>
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=600&fit=crop" alt="Coffee" class="post-image">
+                <div class="post-content">Barangay_Officials</div>
+                <img src="https://appliedsciences.nasa.gov/sites/default/files/styles/homepage_hero/public/2024-05/firefighters_US-AirForce.jpg.webp?itok=Gl7tlX3R" alt="Coffee" class="post-image">
             </div>
 
             <div class="post">
                 <div class="post-header">
-                    <div class="avatar">BF</div>
+                    <img src="img/Picture1.png" alt="Barangay Officials" class="avatar">
                     <div class="post-author">
                         <div class="post-author-name">Barangay_Officials</div>
                         <div class="post-time">1 day ago</div>
                     </div>
                 </div>
-                <div class="post-content">Exploring the mountains 🏔️</div>
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&sat=-100" alt="Mountains" class="post-image">
+                <div class="post-content"></div>
+                <img src="https://miro.medium.com/v2/resize:fit:2000/1*C51FyB82wHdzRTgEIsYKPw.jpeg" alt="Mountains" class="post-image">
             </div>
         </div>
     </div>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-container">
-      <div class="footer-left">
-        <img src="img/Picture2.png" alt="Logo" class="footer-logo-img">
-        <div class="footer-logo-text">
-          <h3>Barangay</h3>
-          <p>Disaster Preparedness Portal</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="img/Picture2.png" alt="Logo" class="footer-logo-img">
+                <div class="footer-logo-text">
+                    <h3>Barangay</h3>
+                    <p>Disaster Preparedness Portal</p>
+                </div>
+            </div>
+        
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
+                <p><strong>Phone:</strong> (02) 123-4567</p>
+                <p><strong>Location:</strong> Barangay Hall, PH</p>
+            </div>
         </div>
-      </div>
-  
-      <div class="footer-contact">
-        <h4>Contact Us</h4>
-        <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
-        <p><strong>Phone:</strong> (02) 123-4567</p>
-        <p><strong>Location:</strong> Barangay Hall, PH</p>
-      </div>
-    </div>
-  
-    <div class="footer-bottom">
-      <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
-    </div>
-  </footer>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+        </div>
+    </footer>
 </body>
 </html>

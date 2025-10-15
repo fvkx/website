@@ -1,22 +1,28 @@
-// function openDisaster(evt, disasterName) {
-//     var i, tabcontent, tablinks;
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("loginForm");
+    const errorMessage = document.getElementById("error-message");
 
-//     // Hide all tab contents
-//     tabcontent = document.getElementsByClassName("tabcontent");
-//     for (i = 0; i < tabcontent.length; i++) {
-//         tabcontent[i].style.display = "none";
-//     }
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Stop default submission
 
-//     // Remove "active" class from all buttons
-//     tablinks = document.getElementsByClassName("tablinks");
-//     for (i = 0; i < tablinks.length; i++) {
-//         tablinks[i].className = tablinks[i].className.replace(" active", "");
-//     }
+        // Get entered values
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
 
-//     // Show the selected tab
-//     document.getElementById(disasterName).style.display = "block";
+        // ✅ You can change these credentials
+        const validUsername = "admin";
+        const validPassword = "admin";
 
-//     // Add "active" class to the button
-//     evt.currentTarget.className += " active";
-// }
+        if (username === validUsername && password === validPassword) {
+            // Redirect to admin page
+            window.location.href = "adminAlertHistory.html";
+        } else {
+            // Show error message below form
+            errorMessage.textContent = "⚠️ Invalid username or password. Please try again.";
+            errorMessage.style.color = "red";
 
+            // 🔔 Show pop-up notification
+            alert("Incorrect username or password!");
+        }
+    });
+});
