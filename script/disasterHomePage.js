@@ -1,21 +1,15 @@
-function openDisaster(evt, disasterName) {
-    const tabcontent = document.getElementsByClassName("tabcontent");
-    const tablinks = document.getElementsByClassName("tablinks");
+function openTab(evt, tabName) {
+  const tabcontent = document.querySelectorAll(".tabcontent");
+  tabcontent.forEach(tab => tab.style.display = "none");
 
-    for (let i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-        tabcontent[i].classList.remove("active");
-    }
+  const tablinks = document.querySelectorAll(".tab button");
+  tablinks.forEach(btn => btn.classList.remove("active"));
 
-    for (let i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-    }
-
-    document.getElementById(disasterName).style.display = "block";
-    document.getElementById(disasterName).classList.add("active");
-    evt.currentTarget.classList.add("active");
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.classList.add("active");
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".tablinks").dispatchEvent(new Event("mouseover"));
+// Show first tab by default
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".tab button").dispatchEvent(new Event("mouseover"));
 });

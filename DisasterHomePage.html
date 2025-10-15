@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/DisasterHomePage.css">
+  <script src="script/disasterHomePage.js"></script>
   <title>Disaster Information | Barangay Disaster Preparedness Portal</title>
 
 </head>
@@ -140,23 +141,7 @@
 
   </section>
 
-  <script>
-    function openTab(evt, tabName) {
-      const tabcontent = document.querySelectorAll(".tabcontent");
-      tabcontent.forEach(tab => tab.style.display = "none");
 
-      const tablinks = document.querySelectorAll(".tab button");
-      tablinks.forEach(btn => btn.classList.remove("active"));
-
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.classList.add("active");
-    }
-
-    // Show first tab by default
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelector(".tab button").dispatchEvent(new Event("mouseover"));
-    });
-  </script>
 <!-- Footer -->
 <footer class="footer">
     <div class="footer-container">
