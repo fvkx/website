@@ -156,9 +156,17 @@ header {
   border-radius: 50%;
 }
 
-.red { background-color: #ff3333; }
-.orange { background-color: #ff8800; }
-.yellow { background-color: #ffd633; }
+.red {
+  background-color: #ff3333;
+}
+
+.orange {
+  background-color: #ff8800;
+}
+
+.yellow {
+  background-color: #ffd633;
+}
 
 /* ==============================
    TAB CONTENT
@@ -172,8 +180,15 @@ header {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .tabcontent h3 {

@@ -1,20 +1,108 @@
-
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(135deg, #0028a3, #005dff);
+    color: #fff;
+    padding: 15px 60px;
+    /* smaller, same as HomePage */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-text h2 {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.logo-text h6 {
+    font-size: 12px;
+    color: #dbe7ff;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background: #ffffff;
+    color: #0036b5;
+}
+
+/* Login Button */
+.nav-menu .login-btn {
+    background: #ffffff;
+    color: #0036b5;
+    border: 2px solid #ffffff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.nav-menu .login-btn:hover {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+/* ===== BODY ===== */
 body {
     background-color: #f5f7fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+/* Center login form only */
 .login-container {
     background: white;
     border-radius: 10px;
@@ -23,8 +111,11 @@ body {
     max-width: 400px;
     padding: 2.5rem;
     border-top: 5px solid #0047AA;
+    margin: 80px auto;
+    /* Centers vertically with space below header */
 }
 
+/* ===== LOGIN FORM ===== */
 .login-title {
     color: #000547;
     font-size: 1.8rem;
@@ -79,35 +170,102 @@ body {
     background: #000547;
 }
 
-.error-message {
-    color: #dc3545;
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    display: none;
-    font-size: 14px;
-}
-
-.error-message.show {
-    display: block;
-}
-
 .form-footer {
-    margin-top: 1.5rem;
     text-align: center;
-    font-size: 0.9rem;
-    color: #666;
+    margin-top: 1rem;
 }
 
 .form-footer a {
     color: #0047AA;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .form-footer a:hover {
-    color: #000547;
     text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: linear-gradient(135deg, #0028a3, #0048d9);
+    color: #ffffff;
+    padding: 40px 60px 20px;
+    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.25);
+    font-family: "Poppins", sans-serif;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.footer-logo-text h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.footer-logo-text p {
+    margin-top: 5px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.footer-contact h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.footer-contact p {
+    margin: 6px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-contact strong {
+    color: #dbe7ff;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 30px;
+    }
+
+    .login-container {
+        margin: 60px 20px;
+    }
+
+    footer {
+        padding: 30px 20px;
+    }
 }

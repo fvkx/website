@@ -13,16 +13,30 @@
     <!-- ===== HEADER ===== -->
     <header>
         <div class="logo">
-            <h2>Barangay</h2>
-            <h6>Disaster Preparedness Portal</h6>
+            <img src="img/Picture2.png" alt="Barangay Logo">
+            <div class="logo-text">
+                <h2>Barangay</h2>
+                <h6>Disaster Preparedness Portal</h6>
+            </div>
         </div>
+
         <nav class="nav-menu">
-            <a href="homepage.html">Home</a>
-            <a href="aboutpage.html" class="active">About</a>
+            <a href="HomePage.html">Home</a>
+            <a href="DisasterHomePage.html">Disasters</a>
+            <a href="evacutionmap.html">Evacuation Maps</a>
+            <a href="HotlinePage.html">Hotlines</a>
+            <a href="newsUserPage.html">News</a>
+            <a href="aboutpage.html">About</a>
             <a href="adminLog-in.html" class="login-btn">Login</a>
+
+            <!-- Multi-language Button -->
+            <select class="language-select">
+                <option value="en">English</option>
+                <option value="fil">Filipino</option>
+                <option value="bis">Bisaya</option>
+            </select>
         </nav>
     </header>
-
     <!-- ===== ABOUT SECTION ===== -->
     <section class="about-container">
         <div class="about-content">
@@ -37,7 +51,7 @@
             <p>
                 This website was <strong>developed by a team of IT students from St. Rita’s College of
                     Balingasag</strong> as part of their community-oriented initiative. It is specifically designed for
-                <strong>Barangay 3, Calacalá, Balingasag, Misamis Oriental</strong>, aiming to enhance local
+                <strong>Barangay 3, Balingasag, Misamis Oriental</strong>, aiming to enhance local
                 preparedness, awareness, and coordination during emergencies. Through this platform, residents can
                 access real-time updates, safety guidelines, and communication resources to ensure a safer and more
                 resilient community.
@@ -49,18 +63,32 @@
                 promote safety across the community.
             </p>
 
-            <div class="about-image">
-                <img src="img/about-banner.jpg" alt="Community preparedness" />
-            </div>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer>
-        <p>&copy; 2025 Barangay Disaster Preparedness Portal. Developed by IT students of St. Rita’s College of
-            Balingasag. All Rights Reserved.</p>
-    </footer>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="img/Picture2.png" alt="Logo" class="footer-logo-img">
+                <div class="footer-logo-text">
+                    <h3>Barangay</h3>
+                    <p>Disaster Preparedness Portal</p>
+                </div>
+            </div>
 
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
+                <p><strong>Phone:</strong> (02) 123-4567</p>
+                <p><strong>Location:</strong> Barangay Hall, PH</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+        </div>
+    </footer>
 </body>
 
 </html>
