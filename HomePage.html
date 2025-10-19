@@ -4,16 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/HomePage.css">
+  <script src="script/home.js"></script>
   <title>Barangay Disaster Preparedness Portal</title>
-  <link rel="stylesheet" href="css/HomePage.css" />
+
 </head>
 
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header>
+  <header id="header">
     <div class="logo">
-      <img src="img/Picture2.png" alt="Barangay Logo">
+      <img src="img/Picture2.png" alt="Barangay Logo" class="logo-img">
       <div class="logo-text">
         <h2>Barangay</h2>
         <h6>Disaster Preparedness Portal</h6>
@@ -21,16 +23,17 @@
     </div>
 
     <nav class="nav-menu">
-        <a href="HomePage.html">Home</a>
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="adminLog-in.html" class="login-btn">Login</a>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="aboutpage.html">About</a>
+      <a href="#" class="login-btn">Login</a>
     </nav>
   </header>
 
 
   <!-- ===== HERO SECTION ===== -->
   <section class="home">
+    <img src="img/Homepage.jpeg" alt="Background" class="hero-bg-image">
     <div class="overlay"></div>
     <div class="hero-text">
       <h2>Barangay Disaster Preparedness Portal</h2>
@@ -41,24 +44,28 @@
   <!-- ===== FEATURES SECTION ===== -->
   <section class="grid-container" id="features">
     <div class="box">
+      <div class="feature-icon">🚨</div>
       <h3 class="heading">Disaster Alerts</h3>
       <p>Real-time updates on active disasters, safety measures, and official advisories for our community.</p>
       <a href="DisasterHomePage.html" class="button">More Details</a>
     </div>
 
     <div class="box">
+      <div class="feature-icon">📰</div>
       <h3 class="heading">News & Announcements</h3>
       <p>Latest updates, events, and official communications from barangay officials and disaster management teams.</p>
       <a href="newsUserPage.html" class="button">More Details</a>
     </div>
 
     <div class="box">
+      <div class="feature-icon">🗺️</div>
       <h3 class="heading">Evacuation Maps</h3>
       <p>Interactive maps showing evacuation centers, safe routes, and hazard zones in our barangay.</p>
       <a href="evacutionmap.html" class="button">More Details</a>
     </div>
 
     <div class="box">
+      <div class="feature-icon">📞</div>
       <h3 class="heading">Emergency Hotlines</h3>
       <p>Critical contact numbers for emergency services, rescue operations, and barangay assistance.</p>
       <a href="HotlinePage.html" class="button">More Details</a>
@@ -88,6 +95,7 @@
       <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
     </div>
   </footer>
+  
 </body>
 
 </html>

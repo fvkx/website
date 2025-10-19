@@ -1,16 +1,22 @@
-/* ===== GENERAL STYLING ===== */
-body {
+* {
     margin: 0;
-    font-family: "Poppins", sans-serif;
-    background-color: #f2f7ff;
-    color: #222;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e8f0ff 0%, #f5f8ff 100%);
+    color: #1a1a1a;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
 /* ===== HEADER ===== */
 header {
     background: linear-gradient(135deg, #0028a3, #005dff);
     color: #fff;
-    padding: 30px 80px;
+    padding: 25px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,32 +24,30 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 40, 163, 0.3);
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 .logo img {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo-text h2 {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 800;
     text-transform: uppercase;
-    color: #ffffff;
+    letter-spacing: 1px;
 }
 
 .logo-text h6 {
@@ -56,15 +60,16 @@ header {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .nav-menu a {
     text-decoration: none;
     color: #ffffff;
     font-weight: 600;
-    font-size: 15px;
-    padding: 10px 18px;
+    font-size: 14px;
+    padding: 10px 16px;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
@@ -73,9 +78,9 @@ header {
 .nav-menu a.active {
     background: #ffffff;
     color: #0036b5;
+    transform: translateY(-2px);
 }
 
-/* Login Button */
 .nav-menu .login-btn {
     background: #ffffff;
     color: #0036b5;
@@ -83,171 +88,245 @@ header {
     padding: 10px 20px;
     border-radius: 8px;
     font-weight: 700;
-    transition: all 0.3s ease;
 }
 
 .nav-menu .login-btn:hover {
     background: transparent;
     color: #ffffff;
-    border: 2px solid #ffffff;
+    transform: translateY(-2px);
 }
 
-/* Multi-language dropdown */
 .language-select {
-    padding: 8px 10px;
-    border-radius: 6px;
-    border: none;
-    font-size: 14px;
-    outline: none;
-}
-
-/* ==============================
-   EVACUATION MAP IMAGE SECTION (NO JS)
-============================== */
-.map-section {
-    width: 90%;
-    max-width: 1200px;
-    margin: 50px auto;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 26px;
-    font-weight: 700;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 2px solid white;
+    background: white;
     color: #0036b5;
-    margin-bottom: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-select:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== PAGE TITLE ===== */
+.page-header {
+    text-align: center;
+    padding: 50px 20px 30px;
+    background: linear-gradient(135deg, rgba(0, 68, 255, 0.05), rgba(0, 40, 163, 0.05));
+}
+
+.page-header h1 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0028a3;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ===== MAP SECTION ===== */
+.map-section {
+    width: 92%;
+    max-width: 1400px;
+    margin: 40px auto 80px;
 }
 
 .map-viewer input[type="radio"] {
     display: none;
 }
 
-/* Main map container */
+/* Main Map Display */
 .map-display {
-    position: relative;
-    background: #fff;
-    border-radius: 12px;
+    background: #ffffff;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0, 40, 163, 0.15);
+    margin-bottom: 35px;
+    position: relative;
 }
 
-/* Hide all maps by default */
 .map-content {
     display: none;
-    animation: fadeIn 0.6s ease;
+    animation: fadeIn 0.5s ease;
 }
 
-.map-content img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-}
-
-.map-content h3 {
-    margin-top: 15px;
-    color: #0036b5;
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.map-content p {
-    margin: 10px 0 20px;
-    color: #333;
-    font-size: 15px;
-}
-
-/* Show selected map when radio is checked */
-#map1:checked~.map-display #content1,
-#map2:checked~.map-display #content2,
-#map3:checked~.map-display #content3,
-#map4:checked~.map-display #content4,
-#map5:checked~.map-display #content5 {
+.map-content.active {
     display: block;
 }
 
-/* Thumbnails section */
-.map-thumbnails {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.thumb {
-    display: block;
-    width: 180px;
-    height: 120px;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    border: 3px solid transparent;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Highlight active thumbnail */
-#map1:checked~.map-thumbnails label[for="map1"],
-#map2:checked~.map-thumbnails label[for="map2"],
-#map3:checked~.map-thumbnails label[for="map3"],
-#map4:checked~.map-thumbnails label[for="map4"],
-#map5:checked~.map-thumbnails label[for="map5"] {
-    border-color: #0044ff;
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 68, 255, 0.3);
-}
-
-/* Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: scale(0.98);
     }
-
     to {
         opacity: 1;
         transform: scale(1);
     }
 }
 
-/* Match homepage hover design */
-.box {
-    background: linear-gradient(145deg, #ffffff, #e3ebff);
-    border-radius: 15px;
-    padding: 30px 25px;
+.map-image-container {
+    position: relative;
+    background: linear-gradient(135deg, #f0f4ff, #e8f0ff);
+    padding: 30px;
+}
+
+.map-content img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.map-info {
+    padding: 35px 40px;
+    background: linear-gradient(135deg, #f9fbff, #ffffff);
+}
+
+.map-info h3 {
+    color: #0044ff;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.map-info p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.map-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.detail-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #0044ff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.detail-item strong {
+    color: #0044ff;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.detail-item span {
+    color: #555;
+    font-size: 14px;
+}
+
+/* Show selected map when radio is checked */
+#map1:checked ~ .map-display #content1,
+#map2:checked ~ .map-display #content2,
+#map3:checked ~ .map-display #content3,
+#map4:checked ~ .map-display #content4,
+#map5:checked ~ .map-display #content5 {
+    display: block;
+}
+
+/* Thumbnails Section */
+.thumbnails-section {
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.thumbnails-section h3 {
+    color: #0028a3;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.map-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.thumb {
+    display: block;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 3px solid #e8f0ff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 12px;
 }
 
-.box:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-    border-color: #4a90e2;
-    background: linear-gradient(145deg, #eaf1ff, #ffffff);
+.thumb:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 68, 255, 0.25);
+    border-color: #0044ff;
 }
 
-.heading {
-    color: #0d2040;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
+.thumb img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
 }
 
+.thumb-label {
+    color: #0036b5;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+/* Highlight active thumbnail */
+#map1:checked ~ .map-thumbnails label[for="map1"],
+#map2:checked ~ .map-thumbnails label[for="map2"],
+#map3:checked ~ .map-thumbnails label[for="map3"],
+#map4:checked ~ .map-thumbnails label[for="map4"],
+#map5:checked ~ .map-thumbnails label[for="map5"] {
+    border-color: #0044ff;
+    background: linear-gradient(135deg, #e8f0ff, #ffffff);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 68, 255, 0.35);
+}
+
+#map1:checked ~ .map-thumbnails label[for="map1"] .thumb-label,
+#map2:checked ~ .map-thumbnails label[for="map2"] .thumb-label,
+#map3:checked ~ .map-thumbnails label[for="map3"] .thumb-label,
+#map4:checked ~ .map-thumbnails label[for="map4"] .thumb-label,
+#map5:checked ~ .map-thumbnails label[for="map5"] .thumb-label {
+    color: #0044ff;
+    font-weight: 700;
+}
+
+/* ===== FOOTER ===== */
 footer {
     background: linear-gradient(135deg, #0028a3, #0048d9);
     color: #ffffff;
     padding: 40px 60px 20px;
-    margin-top: 60px;
-    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.25);
-    font-family: "Poppins", sans-serif;
+    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.2);
 }
 
 .footer-container {
@@ -257,7 +336,7 @@ footer {
     align-items: center;
     gap: 40px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 20px;
+    padding-bottom: 25px;
 }
 
 .footer-left {
@@ -270,62 +349,90 @@ footer {
     width: 60px;
     height: 60px;
     object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
 }
 
-.footer-logo h3 {
-    font-size: 26px;
+.footer-logo-text h3 {
+    font-size: 24px;
     font-weight: 700;
     margin: 0;
-    letter-spacing: 1px;
 }
 
-.footer-logo p {
+.footer-logo-text p {
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 13px;
     opacity: 0.9;
 }
 
 .footer-contact h4 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-size: 18px;
     font-weight: 600;
 }
 
 .footer-contact p {
-    margin: 6px 0;
+    margin: 8px 0;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .footer-contact strong {
     color: #dbe7ff;
-    font-weight: 600;
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 15px;
+    padding-top: 20px;
     font-size: 13px;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
+        padding: 20px 30px;
         text-align: center;
     }
 
-    .grid-container {
-        padding: 20px 30px;
-        margin-bottom: 40px;
+    .nav-menu {
+        justify-content: center;
+        margin-top: 15px;
     }
 
-    .map-container {
-        height: 45vh;
+    .page-header h1 {
+        font-size: 32px;
     }
 
-    .map-overlay h2 {
-        font-size: 1.6rem;
+    .page-header p {
+        font-size: 16px;
+    }
+
+    .map-info {
+        padding: 25px 20px;
+    }
+
+    .map-info h3 {
+        font-size: 24px;
+    }
+
+    .map-thumbnails {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .thumb img {
+        height: 120px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left {
+        justify-content: center;
     }
 }

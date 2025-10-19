@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emergency Hotlines | Barangay Disaster Preparedness Portal</title>
   <link rel="stylesheet" href="css/HotlinePage.css">
+  <title>Emergency Hotlines | Barangay Disaster Preparedness Portal</title>
+
 
 </head>
 
@@ -24,12 +25,12 @@
       <a href="HomePage.html">Home</a>
       <a href="DisasterHomePage.html">Disasters</a>
       <a href="evacutionmap.html">Evacuation Maps</a>
-      <a href="HotlinePage.html">Hotlines</a>
+      <a href="HotlinePage.html" class="active">Hotlines</a>
       <a href="newsUserPage.html">News</a>
       <a href="aboutpage.html">About</a>
       <a href="adminLog-in.html" class="login-btn">Login</a>
 
-      <!-- Multi-language Button -->
+      
       <select class="language-select">
         <option value="en">English</option>
         <option value="fil">Filipino</option>
@@ -38,34 +39,113 @@
     </nav>
   </header>
 
-  <!-- MAIN HOTLINE SECTION -->
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>Emergency Hotlines</h1>
+    <p>Quick access to essential contact numbers for emergencies and disaster response</p>
+  </div>
+
+  <!-- Hotlines Section -->
   <div class="hotline-container">
-    <h2>Important Contact Numbers</h2>
+    <div class="emergency-banner">
+      <h3>🚨 EMERGENCY: DIAL IMMEDIATELY</h3>
+      <p>In case of life-threatening emergencies, contact these numbers right away</p>
+    </div>
 
     <div class="hotline-list">
       <div class="hotline-item">
-        <h3>Barangay Disaster Risk Reduction Management Office (BDRRMO)</h3>
-        <p>Phone: (032) 123-4567 | Mobile: 0912-345-6789</p>
+        <div class="hotline-header">
+          <div class="hotline-icon">🏛️</div>
+          <h3>Barangay DRRMO</h3>
+        </div>
+        <div class="hotline-contacts">
+          <div class="contact-row">
+            <div class="contact-icon">📞</div>
+            <strong>Phone:</strong>
+            <span class="contact-number">(032) 123-4567</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📱</div>
+            <strong>Mobile:</strong>
+            <span class="contact-number">0912-345-6789</span>
+          </div>
+        </div>
       </div>
 
       <div class="hotline-item">
-        <h3>Local Fire Department</h3>
-        <p>Phone: (032) 765-4321 | Mobile: 0917-111-2222</p>
+        <div class="hotline-header">
+          <div class="hotline-icon">🔥</div>
+          <h3>Fire Department</h3>
+        </div>
+        <div class="hotline-contacts">
+          <div class="contact-row">
+            <div class="contact-icon">📞</div>
+            <strong>Phone:</strong>
+            <span class="contact-number">(032) 765-4321</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📱</div>
+            <strong>Mobile:</strong>
+            <span class="contact-number">0917-111-2222</span>
+          </div>
+        </div>
       </div>
 
       <div class="hotline-item">
-        <h3>Police Station</h3>
-        <p>Phone: (032) 555-7788 | Mobile: 0999-123-0000</p>
+        <div class="hotline-header">
+          <div class="hotline-icon">🚔</div>
+          <h3>Police Station</h3>
+        </div>
+        <div class="hotline-contacts">
+          <div class="contact-row">
+            <div class="contact-icon">📞</div>
+            <strong>Phone:</strong>
+            <span class="contact-number">(032) 555-7788</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📱</div>
+            <strong>Mobile:</strong>
+            <span class="contact-number">0999-123-0000</span>
+          </div>
+        </div>
       </div>
 
       <div class="hotline-item">
-        <h3>Emergency Rescue (EMS)</h3>
-        <p>Phone: (032) 444-5566 | Mobile: 0918-222-3333</p>
+        <div class="hotline-header">
+          <div class="hotline-icon">🚑</div>
+          <h3>Emergency Rescue (EMS)</h3>
+        </div>
+        <div class="hotline-contacts">
+          <div class="contact-row">
+            <div class="contact-icon">📞</div>
+            <strong>Phone:</strong>
+            <span class="contact-number">(032) 444-5566</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📱</div>
+            <strong>Mobile:</strong>
+            <span class="contact-number">0918-222-3333</span>
+          </div>
+        </div>
       </div>
 
       <div class="hotline-item">
-        <h3>Hospital / Medical Assistance</h3>
-        <p>Phone: (032) 777-8899 | Mobile: 0920-123-4567</p>
+        <div class="hotline-header">
+          <div class="hotline-icon">🏥</div>
+          <h3>Hospital / Medical</h3>
+        </div>
+        <div class="hotline-contacts">
+          <div class="contact-row">
+            <div class="contact-icon">📞</div>
+            <strong>Phone:</strong>
+            <span class="contact-number">(032) 777-8899</span>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📱</div>
+            <strong>Mobile:</strong>
+            <span class="contact-number">0920-123-4567</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
