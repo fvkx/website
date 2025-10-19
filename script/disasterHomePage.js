@@ -1,15 +1,14 @@
 function openTab(evt, tabName) {
-  const tabcontent = document.querySelectorAll(".tabcontent");
-  tabcontent.forEach(tab => tab.style.display = "none");
+  const tabcontent = document.getElementsByClassName("tabcontent");
+  for (let i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].classList.remove("active");
+  }
 
   const tablinks = document.querySelectorAll(".tab button");
-  tablinks.forEach(btn => btn.classList.remove("active"));
+  for (let i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
 
-  document.getElementById(tabName).style.display = "block";
+  document.getElementById(tabName).classList.add("active");
   evt.currentTarget.classList.add("active");
 }
-
-// Show first tab by default
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector(".tab button").dispatchEvent(new Event("mouseover"));
-});

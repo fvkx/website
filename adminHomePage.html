@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Alert System - Admin</title>
     <link rel="stylesheet" href="css/adminHomePage.css">
     <script src="script/adminHomeScript.js"></script>
-    <title>Disaster Alert System - Admin</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
     <div class="container">
@@ -32,12 +34,12 @@
 
             <!-- Logout Button -->
             <div class="logout-btn">
-                <button type="button" onclick="handleLogout()">
+                <button onclick="handleLogout()">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </button>
             </div>
-        </div> <!-- ✅ Missing sidebar closing tag added here -->
+        </div>
 
         <!-- Main Content -->
         <div class="main-content">
@@ -59,7 +61,7 @@
                 <div class="card">
                     <h3>Last Alert Sent</h3>
                     <div class="number">Today</div>
-                    <p>14:30 - Hurricane Warning</p>
+                    <p>14:30 - Landslide Warning</p>
                 </div>
             </div>
 
@@ -71,12 +73,11 @@
                         <label for="disasterType">Disaster Type</label>
                         <select id="disasterType" class="form-control">
                             <option value="">Select Disaster Type</option>
-                            <option value="hurricane">Hurricane</option>
+                            <option value="Landslide">Landslide</option>
                             <option value="earthquake">Earthquake</option>
                             <option value="flood">Flood</option>
-                            <option value="wildfire">Wildfire</option>
-                            <option value="tornado">Tornado</option>
                             <option value="tsunami">Tsunami</option>
+                            <option value="fire">Fire</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
@@ -114,5 +115,7 @@
             </div>
         </div>
     </div>
+
+
 </body>
 </html>

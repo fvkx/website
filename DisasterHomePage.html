@@ -11,59 +11,60 @@
 </head>
 
 <body>
-
-  <body>
-    <!-- Header Section -->
-    <header>
-      <div class="logo">
-        <img src="img/Picture2.png" alt="Barangay Logo">
-        <div class="logo-text">
-          <h2>Barangay</h2>
-          <h6>Disaster Preparedness Portal</h6>
-        </div>
+  <header>
+    <div class="logo">
+      <img src="img/Picture2.png" alt="Barangay Logo">
+      <div class="logo-text">
+        <h2>Barangay</h2>
+        <h6>Disaster Preparedness Portal</h6>
       </div>
+    </div>
 
-      <nav class="nav-menu">
-        <a href="HomePage.html">Home</a>
-        <a href="DisasterHomePage.html">Disasters</a>
-        <a href="evacutionmap.html">Evacuation Maps</a>
-        <a href="HotlinePage.html">Hotlines</a>
-        <a href="newsUserPage.html">News</a>
-        <a href="aboutpage.html">About</a>
-        <a href="adminLog-in.html" class="login-btn">Login</a>
+    <nav class="nav-menu">
+      <a href="HomePage.html">Home</a>
+      <a href="DisasterHomePage.html" class="active">Disasters</a>
+      <a href="evacutionmap.html">Evacuation Maps</a>
+      <a href="HotlinePage.html">Hotlines</a>
+      <a href="newsUserPage.html">News</a>
+      <a href="aboutpage.html">About</a>
+      <a href="adminLog-in.html" class="login-btn">Login</a>
+      <select class="language-select">
+        <option value="en">English</option>
+        <option value="fil">Filipino</option>
+        <option value="bis">Bisaya</option>
+      </select>
+    </nav>
+  </header>
 
-        <!-- Multi-language Button -->
-        <select class="language-select">
-          <option value="en">English</option>
-          <option value="fil">Filipino</option>
-          <option value="bis">Bisaya</option>
-        </select>
-      </nav>
-    </header>
-    <section class="tab-container">
-      <div class="tab">
-        <button onmouseover="openTab(event, 'Earthquake')">
-          <span class="color-indicator red"></span> Earthquake
-        </button>
-        <button onmouseover="openTab(event, 'Typhoon')">
-          <span class="color-indicator orange"></span> Typhoon
-        </button>
-        <button onmouseover="openTab(event, 'Flood')">
-          <span class="color-indicator yellow"></span> Flood
-        </button>
-        <button onmouseover="openTab(event, 'Fire')">
-          <span class="color-indicator red"></span> Fire
-        </button>
-        <button onmouseover="openTab(event, 'Landslide')">
-          <span class="color-indicator orange"></span> Landslide
-        </button>
-      </div>
+  <div class="page-title">
+    <h1>Disaster Information & Preparedness</h1>
+    <p>Learn how to stay safe and prepared for emergencies</p>
+  </div>
 
-      <!-- EARTHQUAKE -->
-      <div id="Earthquake" class="tabcontent">
+  <section class="tab-container">
+    <div class="tab">
+      <button class="active" onclick="openTab(event, 'Earthquake')">
+        <span class="color-indicator red"></span> Earthquake
+      </button>
+      <button onclick="openTab(event, 'Typhoon')">
+        <span class="color-indicator orange"></span> Typhoon
+      </button>
+      <button onclick="openTab(event, 'Flood')">
+        <span class="color-indicator yellow"></span> Flood
+      </button>
+      <button onclick="openTab(event, 'Fire')">
+        <span class="color-indicator red"></span> Fire
+      </button>
+      <button onclick="openTab(event, 'Landslide')">
+        <span class="color-indicator orange"></span> Landslide
+      </button>
+    </div>
+
+    <!-- EARTHQUAKE -->
+    <div id="Earthquake" class="tabcontent active">
+      <div class="content-text">
         <h3>Earthquake</h3>
-        <p><strong>Description:</strong> Sudden shaking of the ground caused by movement of Earth's crust, which can
-          damage buildings and infrastructure.</p>
+        <p><strong>Description:</strong> Sudden shaking of the ground caused by movement of Earth's crust, which can damage buildings and infrastructure.</p>
         <p><strong>How to Avoid:</strong></p>
         <ul>
           <li>Secure heavy furniture and shelves to walls.</li>
@@ -77,12 +78,16 @@
           <li>If outside, move away from buildings and power lines.</li>
         </ul>
       </div>
+      <div class="content-image">
+        <img src="https://cdn.who.int/media/images/default-source/emergencies/earthquake-t-rkiye-syria/gettyimages-1246837363-min.tmb-1200v.jpg?sfvrsn=30c7876f_6" alt="Landslide scene" class="disaster-image" onerror="this.src='https://via.placeholder.com/500x350/ff8800/ffffff?text=Landslide'">        <div class="image-caption">⚠️ Stay prepared and know what to do during an earthquake</div>
+      </div>
+    </div>
 
-      <!-- TYPHOON -->
-      <div id="Typhoon" class="tabcontent">
+    <!-- TYPHOON -->
+    <div id="Typhoon" class="tabcontent">
+      <div class="content-text">
         <h3>Typhoon</h3>
-        <p><strong>Description:</strong> A powerful tropical storm with strong winds and heavy rain that can cause
-          flooding and destruction.</p>
+        <p><strong>Description:</strong> A powerful tropical storm with strong winds and heavy rain that can cause flooding and destruction.</p>
         <p><strong>How to Avoid:</strong></p>
         <ul>
           <li>Always check weather advisories.</li>
@@ -96,12 +101,16 @@
           <li>Evacuate to higher ground when advised by authorities.</li>
         </ul>
       </div>
+      <div class="content-image">
+        <img src="https://www.unicef.org/philippines/sites/unicef.org.philippines/files/styles/hero_extended/public/UNIPH2019034.JPG.webp?itok=f97L34c3" alt="Landslide scene" class="disaster-image" onerror="this.src='https://via.placeholder.com/500x350/ff8800/ffffff?text=Landslide'">        <div class="image-caption">🌪️ Monitor weather updates and evacuate when necessary</div>
+      </div>
+    </div>
 
-      <!-- FLOOD -->
-      <div id="Flood" class="tabcontent">
+    <!-- FLOOD -->
+    <div id="Flood" class="tabcontent">
+      <div class="content-text">
         <h3>Flood</h3>
-        <p><strong>Description:</strong> Overflow of water that submerges land, often caused by heavy rain or storm
-          surges.</p>
+        <p><strong>Description:</strong> Overflow of water that submerges land, often caused by heavy rain or storm surges.</p>
         <p><strong>How to Avoid:</strong></p>
         <ul>
           <li>Avoid dumping garbage that blocks drainage systems.</li>
@@ -115,12 +124,16 @@
           <li>Do not walk or drive through floodwaters.</li>
         </ul>
       </div>
+      <div class="content-image">
+        <img src="https://media.philstar.com/photos/2020/11/12/afp-resuers-rubber-boat-marikina_2020-11-12_15-57-54.jpg" alt="Landslide scene" class="disaster-image" onerror="this.src='https://via.placeholder.com/500x350/ff8800/ffffff?text=Landslide'">        <div class="image-caption">💧 Never walk or drive through floodwaters</div>
+      </div>
+    </div>
 
-      <!-- FIRE -->
-      <div id="Fire" class="tabcontent">
+    <!-- FIRE -->
+    <div id="Fire" class="tabcontent">
+      <div class="content-text">
         <h3>Fire</h3>
-        <p><strong>Description:</strong> Uncontrolled burning that can spread quickly and cause severe damage to
-          property and life.</p>
+        <p><strong>Description:</strong> Uncontrolled burning that can spread quickly and cause severe damage to property and life.</p>
         <p><strong>How to Avoid:</strong></p>
         <ul>
           <li>Keep flammable materials away from heat sources.</li>
@@ -134,12 +147,16 @@
           <li>Evacuate immediately and call emergency services.</li>
         </ul>
       </div>
+      <div class="content-image">
+        <img src="https://media4.s-nbcnews.com/i/MSNBC/Components/Photo/_new/100425-fire-hmed-2p.jpg" alt="Landslide scene" class="disaster-image" onerror="this.src='https://via.placeholder.com/500x350/ff8800/ffffff?text=Landslide'">        <div class="image-caption">🔥 Evacuate quickly and call emergency services</div>
+      </div>
+    </div>
 
-      <!-- LANDSLIDE -->
-      <div id="Landslide" class="tabcontent">
+    <!-- LANDSLIDE -->
+    <div id="Landslide" class="tabcontent">
+      <div class="content-text">
         <h3>Landslide</h3>
-        <p><strong>Description:</strong> Movement of rock, soil, or debris down a slope due to rain, earthquakes, or
-          human activity.</p>
+        <p><strong>Description:</strong> Movement of rock, soil, or debris down a slope due to rain, earthquakes, or human activity.</p>
         <p><strong>How to Avoid:</strong></p>
         <ul>
           <li>Avoid building on steep slopes.</li>
@@ -153,50 +170,36 @@
           <li>Listen to local authorities for evacuation updates.</li>
         </ul>
       </div>
+      <div class="content-image">
+        <img src="https://icdo.org/files/Landslides.jpg" alt="Landslide scene" class="disaster-image" onerror="this.src='https://via.placeholder.com/500x350/ff8800/ffffff?text=Landslide'">
+        <div class="image-caption">⛰️ Move to higher, stable ground immediately</div>
+      </div>
+    </div>
+  </section>
 
-    </section>
-
-    <script>
-      function openTab(evt, tabName) {
-        const tabcontent = document.querySelectorAll(".tabcontent");
-        tabcontent.forEach(tab => tab.style.display = "none");
-
-        const tablinks = document.querySelectorAll(".tab button");
-        tablinks.forEach(btn => btn.classList.remove("active"));
-
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.classList.add("active");
-      }
-
-      // Show first tab by default
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelector(".tab button").dispatchEvent(new Event("mouseover"));
-      });
-    </script>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-left">
-          <img src="img/Picture2.png" alt="Logo" class="footer-logo-img">
-          <div class="footer-logo-text">
-            <h3>Barangay</h3>
-            <p>Disaster Preparedness Portal</p>
-          </div>
-        </div>
-
-        <div class="footer-contact">
-          <h4>Contact Us</h4>
-          <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
-          <p><strong>Phone:</strong> (02) 123-4567</p>
-          <p><strong>Location:</strong> Barangay Hall, PH</p>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="img/Picture2.png" alt="Logo" class="footer-logo-img">
+        <div class="footer-logo-text">
+          <h3>Barangay</h3>
+          <p>Disaster Preparedness Portal</p>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
+        <p><strong>Phone:</strong> (02) 123-4567</p>
+        <p><strong>Location:</strong> Barangay Hall, PH</p>
       </div>
-    </footer>
+    </div>
 
-  </body>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+    </div>
+  </footer>
+
+</body>
 
 </html>

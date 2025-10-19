@@ -2,108 +2,120 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/newUserPage.css">
-  <title>Posts Feed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/newUserPage.css">
+    <title>News & Updates | Barangay Disaster Preparedness Portal</title>
+
 </head>
 
 <body>
-  <!-- Header Section -->
-  <header>
-    <div class="logo">
-      <img src="img/Picture2.png" alt="Barangay Logo">
-      <div class="logo-text">
-        <h2>Barangay</h2>
-        <h6>Disaster Preparedness Portal</h6>
-      </div>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="img/Picture2.png" alt="Barangay Logo">
+            <div class="logo-text">
+                <h2>Barangay</h2>
+                <h6>Disaster Preparedness Portal</h6>
+            </div>
+        </div>
+    
+        <nav class="nav-menu">
+            <a href="HomePage.html">Home</a>
+            <a href="DisasterHomePage.html">Disasters</a>
+            <a href="evacutionmap.html">Evacuation Maps</a>
+            <a href="HotlinePage.html">Hotlines</a>
+            <a href="newsUserPage.html">News</a>
+            <a href="aboutpage.html">About</a>
+            <a href="adminLog-in.html" class="login-btn">Login</a>
+            <select class="language-select">
+                <option value="en">English</option>
+                <option value="fil">Filipino</option>
+                <option value="bis">Bisaya</option>
+            </select>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>News & Updates</h1>
+        <p>Stay informed with the latest disaster preparedness news and community updates</p>
     </div>
 
-    <nav class="nav-menu">
-      <a href="HomePage.html">Home</a>
-      <a href="DisasterHomePage.html">Disasters</a>
-      <a href="evacutionmap.html">Evacuation Maps</a>
-      <a href="HotlinePage.html">Hotlines</a>
-      <a href="newsUserPage.html">News</a>
-      <a href="aboutpage.html">About</a>
-      <a href="adminLog-in.html" class="login-btn">Login</a>
+    <!-- Posts Feed -->
+    <div class="container">
+        <div class="posts-feed" id="postsFeed">
+            <!-- Post 1 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="img/Picture2.png" alt="Barangay Officials" class="avatar">
+                    <div class="post-author">
+                        <div class="post-author-name">Barangay Officials</div>
+                        <div class="post-time">⏱️ 2 hours ago</div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    A dramatic volcanic eruption sends ash and smoke into the sky, showing nature's immense power and the beauty of geological activity. Residents are advised to stay indoors and follow safety protocols.
+                </div>
+                <img src="https://i.natgeofe.com/n/79dd0b3b-0038-4d3c-a947-a8e3a0ecb9d5/52801.jpg" alt="Volcanic Eruption" class="post-image">
+            </div>
 
-      <!-- Multi-language Button -->
-      <select class="language-select">
-        <option value="en">English</option>
-        <option value="fil">Filipino</option>
-        <option value="bis">Bisaya</option>
-      </select>
-    </nav>
-  </header>
+            <!-- Post 2 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="img/Picture2.png" alt="Barangay Officials" class="avatar">
+                    <div class="post-author">
+                        <div class="post-author-name">Barangay Officials</div>
+                        <div class="post-time">⏱️ 5 hours ago</div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    Rescue workers in orange uniforms assess damage after a natural disaster, highlighting teamwork and relief operations in affected areas. Emergency response teams continue to provide assistance to affected communities.
+                </div>
+                <img src="https://theaseanmagazine.asean.org/files/media/2023/10/issue30-20-01.jpg" alt="Rescue Operations" class="post-image">
+            </div>
 
-  <div class="container">
-    <div class="posts-feed" id="postsFeed">
-      <!-- Sample posts -->
-      <div class="post">
-        <div class="post-header">
-          <div class="avatar">BF</div>
-          <div class="post-author">
-            <div class="post-author-name">Barangay_Officials</div>
-            <div class="post-time">2 hours ago</div>
-          </div>
+            <!-- Post 3 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="img/Picture2.png" alt="Barangay Officials" class="avatar">
+                    <div class="post-author">
+                        <div class="post-author-name">Barangay Officials</div>
+                        <div class="post-time">⏱️ 1 day ago</div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    Local residents walk through a devastated street lined with rubble and collapsed buildings, capturing the aftermath of a natural disaster and the challenge of recovery. Community support and rebuilding efforts are ongoing.
+                </div>
+                <img src="https://images.stockcake.com/public/f/b/9/fb9f1110-852f-4d0e-a519-6d125ce9889a_large/post-disaster-recovery-scene-stockcake.jpg" alt="Disaster Aftermath" class="post-image">
+            </div>
         </div>
-        <div class="post-content">Beautiful sunset today! 🌅</div>
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop" alt="Sunset"
-          class="post-image">
-      </div>
-
-      <div class="post">
-        <div class="post-header">
-          <div class="avatar">BF</div>
-          <div class="post-author">
-            <div class="post-author-name">Barangay_Officials</div>
-            <div class="post-time">5 hours ago</div>
-          </div>
-        </div>
-        <div class="post-content">Barangay_officials</div>
-        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=600&fit=crop" alt="Coffee"
-          class="post-image">
-      </div>
-
-      <div class="post">
-        <div class="post-header">
-          <div class="avatar">BF</div>
-          <div class="post-author">
-            <div class="post-author-name">Barangay_Officials</div>
-            <div class="post-time">1 day ago</div>
-          </div>
-        </div>
-        <div class="post-content">Exploring the mountains 🏔️</div>
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&sat=-100"
-          alt="Mountains" class="post-image">
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-left">
-        <img src="img/Picture2.png" alt="Logo" class="footer-logo-img">
-        <div class="footer-logo-text">
-          <h3>Barangay</h3>
-          <p>Disaster Preparedness Portal</p>
-        </div>
-      </div>
-
-      <div class="footer-contact">
-        <h4>Contact Us</h4>
-        <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
-        <p><strong>Phone:</strong> (02) 123-4567</p>
-        <p><strong>Location:</strong> Barangay Hall, PH</p>
-      </div>
     </div>
 
-    <div class="footer-bottom">
-      <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="img/Picture2.png" alt="Logo" class="footer-logo-img">
+                <div class="footer-logo-text">
+                    <h3>Barangay</h3>
+                    <p>Disaster Preparedness Portal</p>
+                </div>
+            </div>
+        
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><strong>Email:</strong> barangayprepportal@gmail.com</p>
+                <p><strong>Phone:</strong> (02) 123-4567</p>
+                <p><strong>Location:</strong> Barangay Hall, PH</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Barangay Disaster Preparedness Portal | All Rights Reserved</p>
+        </div>
+    </footer>
+    
 </body>
 
 </html>

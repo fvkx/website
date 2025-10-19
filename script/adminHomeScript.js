@@ -1,52 +1,69 @@
-// Wait for the page to load
-document.addEventListener("DOMContentLoaded", function () {
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Character counter
+    const messageInput = document.getElementById('message');
+    const charCount = document.getElementById('charCount');
 
-    const sendBtn = document.getElementById("sendBtn");
-    const cancelBtn = document.getElementById("cancelBtn");
-    const messageInput = document.getElementById("message");
-    const charCount = document.getElementById("charCount");
-
-    // 🧾 Update character counter
-    messageInput.addEventListener("input", function () {
-        charCount.textContent = messageInput.value.length;
+    messageInput.addEventListener('input', function() {
+        const count = this.value.length;
+        charCount.textContent = count;
+        
+        if (count > 160) {
+            charCount.style.color = '#e74c3c';
+        } else if (count > 140) {
+            charCount.style.color = '#f39c12';
+        } else {
+            charCount.style.color = '#65676b';
+        }
     });
 
-    // 🚨 Handle Send Alert button
-    sendBtn.addEventListener("click", function () {
-        const disasterType = document.getElementById("disasterType").value;
-        const severity = document.getElementById("severity").value;
-        const message = messageInput.value.trim();
+    // Send alert
+    document.getElementById('sendBtn').addEventListener('click', function() {
+        const disasterType = document.getElementById('disasterType').value;
+        const severity = document.getElementById('severity').value;
+        const message = document.getElementById('message').value;
 
         if (!disasterType || !severity || !message) {
-            alert("⚠️ Please fill out all fields before sending an alert.");
+            alert('Please fill in all fields');
             return;
         }
 
-        // Confirm before sending
-        const confirmSend = confirm(`Send ${severity.toUpperCase()} alert for ${disasterType.toUpperCase()}?`);
-        if (confirmSend) {
-            alert("✅ Alert has been sent successfully!");
-            document.getElementById("smsForm").reset();
-            charCount.textContent = "0";
+        // Create formatted confirmation message with user inputs
+        const confirmMessage = `Are you sure you want to send this alert?\n\n` +
+                              `Disaster Type: ${disasterType}\n` +
+                              `Severity: ${severity}\n` +
+                              `Message: ${message}\n\n` +
+                              `Recipients: 1,247 people`;
+
+        if (confirm(confirmMessage)) {
+            // Create success message with user inputs
+            const successMessage = `Alert sent successfully!\n\n` +
+                                  `Disaster Type: ${disasterType}\n` +
+                                  `Severity: ${severity}\n` +
+                                  `Message: ${message}\n` +
+                                  `Sent to: 1,247 recipients`;
+            
+            alert(successMessage);
+            
+            // Add your send logic here
+            document.getElementById('smsForm').reset();
+            charCount.textContent = '0';
         }
     });
 
-    // ❌ Handle Cancel button
-    cancelBtn.addEventListener("click", function () {
-        const confirmCancel = confirm("Are you sure you want to clear this form?");
-        if (confirmCancel) {
-            document.getElementById("smsForm").reset();
-            charCount.textContent = "0";
-            alert("Form cleared.");
+    // Cancel button
+    document.getElementById('cancelBtn').addEventListener('click', function() {
+        if (confirm('Are you sure you want to cancel? All changes will be lost.')) {
+            document.getElementById('smsForm').reset();
+            charCount.textContent = '0';
         }
     });
 });
 
-// 🔐 Logout confirmation
+// Logout handler (outside DOMContentLoaded so it's globally accessible)
 function handleLogout() {
-    const confirmLogout = confirm("Are you sure you want to log out?");
-    if (confirmLogout) {
-        alert("You have been logged out.");
-        window.location.href = "HomePage.html"; // redirect to homepage
+    if (confirm('Are you sure you want to logout?')) {
+        alert('Logging out...');
+        window.location.href = "HomePage.html"; // redirect to your homepage
     }
 }
